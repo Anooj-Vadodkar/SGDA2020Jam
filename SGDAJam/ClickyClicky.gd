@@ -9,11 +9,12 @@ var timer
 var mouse_over = false
 signal enemy_clicked
 func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		#set_active(false)
-		print("Owari Da")
-		timer = OS.get_unix_time()
-		
+	if event is InputEventMouseButton:
+		if(event.pressed and event.button_index == BUTTON_LEFT):
+			print("Owari Da")
+			timer = OS.get_unix_time()
+		elif event.pressed and event.button_index == BUTTON_RIGHT:
+			print ("Za warudo")
 	
 		
 func _process(delta):
