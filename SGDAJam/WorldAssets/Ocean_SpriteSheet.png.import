@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/treestump1.png-80442c22dd4d7bb0ce45987528fd9533.stex"
+path="res://.import/Ocean_SpriteSheet.png-1d0b90e56ce1c57a28822446be32f80a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://treestump1.png"
-dest_files=[ "res://.import/treestump1.png-80442c22dd4d7bb0ce45987528fd9533.stex" ]
+source_file="res://WorldAssets/Ocean_SpriteSheet.png"
+dest_files=[ "res://.import/Ocean_SpriteSheet.png-1d0b90e56ce1c57a28822446be32f80a.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
