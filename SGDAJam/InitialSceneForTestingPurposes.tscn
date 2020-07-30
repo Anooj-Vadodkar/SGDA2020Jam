@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://PlayerRelatedStuff/whenyouwalkin.png" type="Texture" id=1]
 [ext_resource path="res://WorldAssets/grass1.png" type="Texture" id=2]
@@ -17,8 +17,13 @@
 [ext_resource path="res://DialogueRelatedAssets/next-indicator.png" type="Texture" id=15]
 [ext_resource path="res://ArcaMajora3-Heavy.otf" type="DynamicFontData" id=16]
 [ext_resource path="res://DialogueRelatedAssets/dialogbackground.png" type="Texture" id=17]
+[ext_resource path="res://WorldAssets/Sky.png" type="Texture" id=18]
+[ext_resource path="res://WorldAssets/MoreFunGrassTiles.png" type="Texture" id=19]
+[ext_resource path="res://WorldAssets/MoreFunGrassTiles1.png" type="Texture" id=20]
+[ext_resource path="res://WorldAssets/MoreFunGrassTiles2.png" type="Texture" id=21]
+[ext_resource path="res://WorldAssets/MoreFunGrassTiles3.png" type="Texture" id=22]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=42]
 0/name = "DirtTileset.png 0"
 0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
@@ -43,14 +48,183 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=43]
 radius = 12.0
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=63]
+radius = 13.6755
+
+[sub_resource type="DynamicFont" id=64]
+font_data = ExtResource( 16 )
+
+[sub_resource type="Animation" id=65]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
+}
+
+[sub_resource type="TileSet" id=66]
+0/name = "MoreFunGrassTiles.png 0"
+0/texture = ExtResource( 19 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 46, 47 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=67]
+0/name = "MoreFunGrassTiles1.png 0"
+0/texture = ExtResource( 20 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 31 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 216, Vector2( 1, 1 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=68]
+0/name = "MoreFunGrassTiles2.png 0"
+0/texture = ExtResource( 21 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 47, 29 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 63, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=69]
+0/name = "MoreFunGrassTiles3.png 0"
+0/texture = ExtResource( 22 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 216, Vector2( 1, 1 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=70]
+0/name = "cliff.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 48, 54 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 438, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 511, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 219 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "cliff.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 48, 50 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [  ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="CapsuleShape2D" id=44]
 radius = 17.3624
 height = 7.37756
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=45]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -76,7 +250,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=46]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -102,7 +276,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=47]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -130,7 +304,7 @@ tracks/1/keys = {
 "values": [ false, false, false, false, false, false, false, false, false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=48]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -278,7 +452,7 @@ region = Rect2( 504, 0, 18, 25 )
 atlas = ExtResource( 10 )
 region = Rect2( 522, 0, 18, 25 )
 
-[sub_resource type="SpriteFrames" id=42]
+[sub_resource type="SpriteFrames" id=49]
 animations = [ {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
@@ -286,112 +460,104 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=43]
+[sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 30.7338, 30.1107 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 50, 48 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 6 )
 region = Rect2( 50, 0, 50, 48 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 6 )
 region = Rect2( 100, 0, 50, 48 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 100, 65 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 12 )
 region = Rect2( 100, 0, 100, 65 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 12 )
 region = Rect2( 200, 0, 100, 65 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 12 )
 region = Rect2( 300, 0, 100, 65 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 12 )
 region = Rect2( 400, 0, 100, 65 )
 
-[sub_resource type="AtlasTexture" id=54]
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 12 )
 region = Rect2( 500, 0, 100, 65 )
 
-[sub_resource type="SpriteFrames" id=55]
+[sub_resource type="SpriteFrames" id=60]
 animations = [ {
-"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
+"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ) ],
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "Attacking",
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 6.05011, 6.83737 )
 
-[sub_resource type="CircleShape2D" id=45]
+[sub_resource type="CircleShape2D" id=62]
 radius = 160.926
-
-[sub_resource type="CircleShape2D" id=56]
-radius = 13.6755
-
-[sub_resource type="DynamicFont" id=57]
-font_data = ExtResource( 16 )
-
-[sub_resource type="Animation" id=58]
-resource_name = "Schmovin"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
-}
 
 [node name="World" type="Node2D"]
 position = Vector2( -111.142, -16.8006 )
 
 [node name="grass2" type="Sprite" parent="."]
-position = Vector2( 585.225, 320.35 )
+position = Vector2( 597.502, 306.78 )
 rotation = -1.5708
-scale = Vector2( 0.400808, 0.877429 )
+scale = Vector2( 0.4357, 0.94851 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 1, 1000, 600 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 42 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 1376293, 0, 196611 )
+tile_data = PoolIntArray( 524310, 0, 0, 524311, 0, 2, 524324, 0, 0, 524325, 0, 1, 524326, 0, 1, 524327, 0, 2, 589845, 0, 0, 589846, 0, 131078, 589847, 0, 131077, 589848, 0, 1, 589849, 0, 1, 589850, 0, 2, 589859, 0, 0, 589860, 0, 131078, 589861, 0, 65537, 589862, 0, 65537, 589863, 0, 131077, 589864, 0, 2, 655380, 0, 0, 655381, 0, 131078, 655382, 0, 65537, 655383, 0, 65537, 655384, 0, 65537, 655385, 0, 65537, 655386, 0, 131077, 655387, 0, 2, 655394, 0, 0, 655395, 0, 131078, 655396, 0, 65537, 655397, 0, 65537, 655398, 0, 65537, 655399, 0, 65537, 655400, 0, 131077, 655401, 0, 2, 720916, 0, 131072, 720917, 0, 65542, 720918, 0, 65537, 720919, 0, 65537, 720920, 0, 65537, 720921, 0, 65537, 720922, 0, 65537, 720923, 0, 65538, 720930, 0, 65536, 720931, 0, 65537, 720932, 0, 65537, 720933, 0, 65537, 720934, 0, 65537, 720935, 0, 65537, 720936, 0, 65537, 720937, 0, 65538, 786453, 0, 131072, 786454, 0, 65542, 786455, 0, 65537, 786456, 0, 65537, 786457, 0, 65537, 786458, 0, 65537, 786459, 0, 65538, 786466, 0, 131072, 786467, 0, 65542, 786468, 0, 65537, 786469, 0, 65537, 786470, 0, 65537, 786471, 0, 65537, 786472, 0, 65537, 786473, 0, 65538, 851990, 0, 131072, 851991, 0, 131073, 851992, 0, 131073, 851993, 0, 65542, 851994, 0, 65541, 851995, 0, 131074, 852003, 0, 131072, 852004, 0, 131073, 852005, 0, 131073, 852006, 0, 131073, 852007, 0, 131073, 852008, 0, 131073, 852009, 0, 131074, 917529, 0, 131072, 917530, 0, 131074 )
 
 [node name="treestump1" type="Sprite" parent="."]
-position = Vector2( 344, 216 )
+position = Vector2( 344, 258.105 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="treestump1"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="treestump1/StaticBody2D"]
-shape = SubResource( 2 )
+shape = SubResource( 43 )
+
+[node name="treestump2" type="Sprite" parent="."]
+position = Vector2( 350.029, 417.882 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="treestump2"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="treestump2/StaticBody2D"]
+shape = SubResource( 43 )
 
 [node name="cliff" type="Sprite" parent="."]
 position = Vector2( 866.283, 344.133 )
@@ -416,97 +582,6 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 665, 40 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 810.631, 326.936 )
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( -1.56604, 0.533081 )
-scale = Vector2( 2, 1.94063 )
-texture = ExtResource( 1 )
-flip_h = true
-hframes = 8
-frame = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0.334015, 3.38305 )
-shape = SubResource( 3 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-anims/WhenYouStandinLeft = SubResource( 4 )
-anims/WhenYouStandinRight = SubResource( 5 )
-anims/WhenYouWalkin = SubResource( 6 )
-anims/WhenYouWalkinLeft = SubResource( 7 )
-
-[node name="Skeleton" type="KinematicBody2D" parent="."]
-position = Vector2( 647.112, 340.628 )
-script = ExtResource( 8 )
-
-[node name="Area2D" type="Area2D" parent="Skeleton"]
-script = ExtResource( 9 )
-
-[node name="RightArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
-visible = false
-position = Vector2( 26.6789, 2.42279 )
-scale = Vector2( 0.748433, 0.713212 )
-frames = SubResource( 42 )
-animation = "New Anim"
-frame = 9
-offset = Vector2( 5, 0 )
-
-[node name="DownArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
-visible = false
-position = Vector2( 2.49915, 34.4355 )
-rotation = 1.5708
-scale = Vector2( 0.748433, 0.713212 )
-frames = SubResource( 42 )
-animation = "New Anim"
-frame = 18
-
-[node name="LeftArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
-visible = false
-position = Vector2( -24.7457, 3.10388 )
-scale = Vector2( 0.748433, 0.713212 )
-frames = SubResource( 42 )
-animation = "New Anim"
-frame = 6
-flip_h = true
-
-[node name="UpArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
-visible = false
-position = Vector2( 1.07312, -32.6453 )
-rotation = 1.5708
-scale = Vector2( 0.748433, 0.713212 )
-frames = SubResource( 42 )
-animation = "New Anim"
-frame = 16
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton/Area2D"]
-position = Vector2( 0.463257, -1.38986 )
-shape = SubResource( 43 )
-
-[node name="Animations" type="AnimatedSprite" parent="Skeleton/Area2D"]
-position = Vector2( 15.3633, -14.3158 )
-scale = Vector2( 1.30727, 1.44049 )
-frames = SubResource( 55 )
-frame = 2
-offset = Vector2( -10, 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton"]
-position = Vector2( -1.38977, -2.31647 )
-shape = SubResource( 44 )
-
-[node name="PlayerDetectionZone" parent="Skeleton" instance=ExtResource( 11 )]
-position = Vector2( 252.237, 81.8755 )
-collision_layer = 2
-
-[node name="CollisionShape2D" parent="Skeleton/PlayerDetectionZone" index="0"]
-position = Vector2( -252.45, -82.65 )
-shape = SubResource( 45 )
-
 [node name="CutsceneOne" type="Area2D" parent="."]
 position = Vector2( 810.268, 334.722 )
 collision_layer = 2
@@ -515,7 +590,7 @@ script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CutsceneOne"]
 position = Vector2( -1.86383, 0.324158 )
-shape = SubResource( 56 )
+shape = SubResource( 63 )
 
 [node name="Control" type="Control" parent="CutsceneOne"]
 margin_right = 40.0
@@ -539,14 +614,14 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="CutsceneOne/Control/DialogBox1"]
-anchor_left = -4.788
-anchor_top = 7.025
-anchor_right = -4.788
-anchor_bottom = 7.025
-margin_left = -282.48
-margin_top = -149.0
-margin_right = 282.52
-margin_bottom = -42.0
+anchor_left = 1.844
+anchor_top = 7.314
+anchor_right = 1.844
+anchor_bottom = 7.341
+margin_left = -282.498
+margin_top = -139.507
+margin_right = 282.502
+margin_bottom = -33.5875
 texture = ExtResource( 17 )
 expand = true
 stretch_mode = 1
@@ -555,13 +630,15 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CutsceneOne/Control/DialogBox1"]
-anchor_left = -11.775
-anchor_top = 3.4
-anchor_right = 2.2
-anchor_bottom = 5.95
-margin_left = 7.00003
-margin_bottom = -3.00002
-custom_fonts/normal_font = SubResource( 57 )
+anchor_left = -4.942
+anchor_top = 4.005
+anchor_right = 8.858
+anchor_bottom = 6.48
+margin_left = -0.00540161
+margin_top = 0.0104065
+margin_right = -0.00546265
+margin_bottom = 0.0104065
+custom_fonts/normal_font = SubResource( 64 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "Alvarius: Where... where am I?"
@@ -571,19 +648,158 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CutsceneOne/Control/DialogBox1"]
-position = Vector2( 66.5, 220.587 )
+position = Vector2( 326.499, 237.429 )
 scale = Vector2( 0.54902, 0.568629 )
 texture = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneOne/Control/DialogBox1/Sprite"]
 autoplay = "Schmovin"
-anims/Schmovin = SubResource( 58 )
+anims/Schmovin = SubResource( 65 )
 
 [node name="Tween" type="Tween" parent="CutsceneOne/Control/DialogBox1"]
+
+[node name="Grass1" type="TileMap" parent="."]
+tile_set = SubResource( 66 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Grass2" type="TileMap" parent="."]
+tile_set = SubResource( 67 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 1, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1310738, 0, 0, 1310739, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376274, 0, 0, 1376275, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1507334, 0, 65536, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1507343, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1507346, 0, 0, 1507347, 0, 65537 )
+
+[node name="Grass3" type="TileMap" parent="."]
+tile_set = SubResource( 68 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Grass4" type="TileMap" parent="."]
+tile_set = SubResource( 69 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1703959, 0, 0, 1703960, 0, 1, 1769495, 0, 65536, 1769496, 0, 65537 )
+
+[node name="CliffMap1" type="TileMap" parent="."]
+tile_set = SubResource( 70 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1572870, 0, 0, 1572871, 0, 1, 1572872, 0, 1, 1572873, 0, 1, 1572874, 0, 1, 1572875, 0, 1, 1572876, 0, 1, 1572877, 0, 1, 1572878, 0, 1, 1572879, 0, 1, 1572880, 0, 1, 1572881, 0, 1, 1572882, 0, 1, 1572883, 0, 2, 1638406, 0, 65536, 1638407, 0, 65537, 1638408, 0, 65537, 1638409, 0, 131073, 1638410, 0, 65537, 1638411, 0, 131073, 1638412, 0, 131073, 1638413, 0, 65537, 1638414, 0, 65537, 1638415, 0, 131073, 1638416, 0, 131073, 1638417, 0, 131073, 1638418, 0, 131073, 1638419, 0, 65538, 1703942, 0, 65536, 1703943, 0, 131073, 1703944, 0, 131073, 1703945, 0, 65537, 1703946, 0, 131073, 1703947, 0, 131073, 1703948, 0, 65537, 1703949, 0, 65537, 1703950, 0, 131073, 1703951, 0, 65537, 1703952, 0, 131073, 1703953, 0, 65537, 1703954, 0, 131073, 1703955, 0, 131074, 1769478, 0, 0, 1769479, 0, 0, 1769480, 0, 0, 1769481, 0, 0, 1769482, 0, 0, 1769483, 0, 0, 1769484, 0, 0, 1769485, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1769489, 0, 0, 1769490, 0, 0, 1769491, 0, 0 )
+
+[node name="CliffMap2" type="TileMap" parent="."]
+tile_set = SubResource( 70 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1572870, 0, 0, 1572871, 0, 1, 1572872, 0, 1, 1572873, 0, 1, 1572874, 0, 1, 1572875, 0, 1, 1572876, 0, 1, 1572877, 0, 1, 1572878, 0, 1, 1572879, 0, 1, 1572880, 0, 1, 1572881, 0, 1, 1572882, 0, 1, 1572883, 0, 2, 1638406, 0, 65536, 1638407, 0, 65537, 1638408, 0, 65537, 1638409, 0, 131073, 1638410, 0, 65537, 1638411, 0, 131073, 1638412, 0, 131073, 1638413, 0, 65537, 1638414, 0, 65537, 1638415, 0, 131073, 1638416, 0, 131073, 1638417, 0, 131073, 1638418, 0, 131073, 1638419, 0, 65538, 1703942, 0, 65536, 1703943, 0, 131073, 1703944, 0, 131073, 1703945, 0, 65537, 1703946, 0, 131073, 1703947, 0, 131073, 1703948, 0, 65537, 1703949, 0, 65537, 1703950, 0, 131073, 1703951, 0, 65537, 1703952, 0, 131073, 1703953, 0, 65537, 1703954, 0, 131073, 1703955, 0, 131074, 1769478, 0, 0, 1769479, 0, 0, 1769480, 0, 0, 1769481, 0, 0, 1769482, 0, 0, 1769483, 0, 0, 1769484, 0, 0, 1769485, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1769489, 0, 0, 1769490, 0, 0, 1769491, 0, 0 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 810.631, 326.936 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( -1.56604, 0.533081 )
+scale = Vector2( 2, 1.94063 )
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 8
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.334015, 3.38305 )
+shape = SubResource( 44 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/WhenYouStandinLeft = SubResource( 45 )
+anims/WhenYouStandinRight = SubResource( 46 )
+anims/WhenYouWalkin = SubResource( 47 )
+anims/WhenYouWalkinLeft = SubResource( 48 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+
+[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground"]
+position = Vector2( 3.89612, 1.94801 )
+scale = Vector2( 1.0493, 1.1632 )
+texture = ExtResource( 18 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 2212, 972 )
+
+[node name="Skeleton" type="KinematicBody2D" parent="."]
+position = Vector2( 647.112, 340.628 )
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Skeleton"]
+script = ExtResource( 9 )
+
+[node name="RightArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( 26.6789, 2.42279 )
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 49 )
+animation = "New Anim"
+frame = 9
+offset = Vector2( 5, 0 )
+
+[node name="DownArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( 2.49915, 34.4355 )
+rotation = 1.5708
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 49 )
+animation = "New Anim"
+frame = 18
+
+[node name="LeftArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( -24.7457, 3.10388 )
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 49 )
+animation = "New Anim"
+frame = 6
+flip_h = true
+
+[node name="UpArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( 1.07312, -32.6453 )
+rotation = 1.5708
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 49 )
+animation = "New Anim"
+frame = 16
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton/Area2D"]
+position = Vector2( 0.463257, -1.38986 )
+shape = SubResource( 50 )
+
+[node name="Animations" type="AnimatedSprite" parent="Skeleton/Area2D"]
+position = Vector2( 15.3633, -14.3158 )
+scale = Vector2( 1.30727, 1.44049 )
+frames = SubResource( 60 )
+frame = 2
+offset = Vector2( -10, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton"]
+position = Vector2( -1.38977, -2.31647 )
+shape = SubResource( 61 )
+
+[node name="PlayerDetectionZone" parent="Skeleton" instance=ExtResource( 11 )]
+position = Vector2( 254.342, 78.7177 )
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="Skeleton/PlayerDetectionZone" index="0"]
+position = Vector2( -252.45, -82.65 )
+shape = SubResource( 62 )
 [connection signal="area_entered" from="CutsceneOne" to="CutsceneOne" method="_on_CutsceneOne_area_entered"]
-[connection signal="cutscene_started" from="CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
+[connection signal="cutscene_ended" from="CutsceneOne" to="CutsceneOne" method="_on_CutsceneOne_cutscene_ended"]
 [connection signal="cutscene_started" from="CutsceneOne" to="Player" method="_on_CutsceneOne_cutscene_started"]
-[connection signal="cutscene_ended" from="CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_started" from="CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
 [connection signal="cutscene_ended" from="CutsceneOne/Control/DialogBox1" to="Player" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_ended" from="CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
 
 [editable path="Skeleton/PlayerDetectionZone"]

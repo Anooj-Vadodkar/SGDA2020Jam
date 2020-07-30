@@ -24,6 +24,7 @@ func load_dialog():
 	else:
 		emit_signal("cutscene_ended")
 		get_parent().get_parent().collision_layer = 3
+		get_parent().get_parent().collision_mask = 3
 		queue_free()
 	dialog_index += 1
 	

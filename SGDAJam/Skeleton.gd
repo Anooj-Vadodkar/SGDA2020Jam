@@ -24,7 +24,6 @@ func _physics_process(delta):
 	match state:
 		CUTSCENE:
 			velocity = Vector2.ZERO
-			print("hi")
 			animatedSprite.stop()
 			pass
 		IDLE:
