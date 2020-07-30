@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://PlayerRelatedStuff/whenyouwalkin.png" type="Texture" id=1]
 [ext_resource path="res://WorldAssets/grass1.png" type="Texture" id=2]
@@ -7,9 +7,11 @@
 [ext_resource path="res://WorldAssets/cliff.png" type="Texture" id=5]
 [ext_resource path="res://EnemyAssets/StandingSkeleton.png" type="Texture" id=6]
 [ext_resource path="res://WorldAssets/DirtTileset.png" type="Texture" id=7]
+[ext_resource path="res://Skeleton.gd" type="Script" id=8]
 [ext_resource path="res://ClickyClicky.gd" type="Script" id=9]
+[ext_resource path="res://EnemyAssets/Arrows/Arrows.png" type="Texture" id=10]
 
-[sub_resource type="TileSet" id=7]
+[sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
 0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
@@ -34,15 +36,14 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=2]
 radius = 12.0
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 17.3624
 height = 7.37756
 
-[sub_resource type="Animation" id=2]
-resource_name = "WhenYouStandinLeft"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -68,8 +69,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "WhenYouStandinRight"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -95,7 +95,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -123,8 +123,7 @@ tracks/1/keys = {
 "values": [ false, false, false, false, false, false, false, false, false ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "WhenYouWalkinLeft"
+[sub_resource type="Animation" id=7]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -172,8 +171,139 @@ animations = [ {
 "speed": 4.0
 } ]
 
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 10 )
+region = Rect2( 18, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 10 )
+region = Rect2( 36, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 10 )
+region = Rect2( 54, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 72, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 10 )
+region = Rect2( 90, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 108, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 10 )
+region = Rect2( 126, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 144, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 10 )
+region = Rect2( 162, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 10 )
+region = Rect2( 180, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 10 )
+region = Rect2( 198, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 10 )
+region = Rect2( 216, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 10 )
+region = Rect2( 234, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 10 )
+region = Rect2( 252, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 10 )
+region = Rect2( 270, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 10 )
+region = Rect2( 288, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 10 )
+region = Rect2( 306, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 10 )
+region = Rect2( 324, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 10 )
+region = Rect2( 342, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 10 )
+region = Rect2( 360, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 10 )
+region = Rect2( 378, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 10 )
+region = Rect2( 396, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 10 )
+region = Rect2( 414, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 10 )
+region = Rect2( 432, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 10 )
+region = Rect2( 450, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 10 )
+region = Rect2( 468, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 10 )
+region = Rect2( 486, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 10 )
+region = Rect2( 504, 0, 18, 25 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 10 )
+region = Rect2( 522, 0, 18, 25 )
+
+[sub_resource type="SpriteFrames" id=44]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 16.4411, 27.1899 )
+extents = Vector2( 14.387, 23.2053 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 15.495, 23.2053 )
 
 [node name="World" type="Node2D"]
 position = Vector2( -111.142, -16.8006 )
@@ -195,9 +325,10 @@ region_enabled = true
 region_rect = Rect2( 0, 1, 1000, 600 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 7 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
+tile_data = PoolIntArray( 1376293, 0, 196611 )
 
 [node name="treestump1" type="Sprite" parent="."]
 position = Vector2( 344, 216 )
@@ -207,7 +338,7 @@ texture = ExtResource( 4 )
 [node name="StaticBody2D" type="StaticBody2D" parent="treestump1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="treestump1/StaticBody2D"]
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="cliff" type="Sprite" parent="."]
 position = Vector2( 866.283, 344.133 )
@@ -246,25 +377,69 @@ frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 0.334015, 3.38305 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
-anims/WhenYouStandinLeft = SubResource( 2 )
-anims/WhenYouStandinRight = SubResource( 3 )
-anims/WhenYouWalkin = SubResource( 4 )
-anims/WhenYouWalkinLeft = SubResource( 5 )
+anims/WhenYouStandinLeft = SubResource( 4 )
+anims/WhenYouStandinRight = SubResource( 5 )
+anims/WhenYouWalkin = SubResource( 6 )
+anims/WhenYouWalkinLeft = SubResource( 7 )
 
-[node name="Skeleton" type="Area2D" parent="."]
-position = Vector2( 654.345, 339.731 )
+[node name="Skeleton" type="KinematicBody2D" parent="."]
+position = Vector2( 667.033, 340.165 )
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Skeleton"]
 script = ExtResource( 9 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Skeleton"]
-position = Vector2( 0.591614, -8.80548 )
-scale = Vector2( 1.52815, 1.60807 )
+[node name="MovingSkeleton" type="AnimatedSprite" parent="Skeleton/Area2D"]
+position = Vector2( 1.57733, -4.80704 )
+scale = Vector2( 1.54324, 1.60807 )
 frames = SubResource( 11 )
 animation = "Standing"
+frame = 2
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton"]
-position = Vector2( -0.286377, -2.1971 )
+[node name="RightArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( 26.6789, 2.42279 )
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 44 )
+animation = "New Anim"
+frame = 9
+
+[node name="DownArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( 2.49915, 34.4355 )
+rotation = 1.5708
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 44 )
+animation = "New Anim"
+frame = 18
+
+[node name="LeftArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( -24.7457, 3.10388 )
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 44 )
+animation = "New Anim"
+frame = 6
+flip_h = true
+
+[node name="UpArrow" type="AnimatedSprite" parent="Skeleton/Area2D"]
+visible = false
+position = Vector2( 1.07312, -32.6453 )
+rotation = 1.5708
+scale = Vector2( 0.748433, 0.713212 )
+frames = SubResource( 44 )
+animation = "New Anim"
+frame = 16
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton/Area2D"]
 shape = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton"]
+shape = SubResource( 13 )
+
+[node name="Node" type="CollisionShape2D" parent="."]
