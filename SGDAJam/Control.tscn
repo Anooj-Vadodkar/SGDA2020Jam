@@ -81,7 +81,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="DialogBox"]
-position = Vector2( 828.358, 474.386 )
+position = Vector2( 827.363, 481.316 )
 scale = Vector2( 0.591131, 0.549042 )
 texture = ExtResource( 2 )
 
