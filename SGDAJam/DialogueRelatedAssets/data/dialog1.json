@@ -1,0 +1,10 @@
+{
+	"001" : {"name": "Alvarius", "text": "Where... where am I?"},
+	"002" : {"name": "Alvarius", "text": "Whoa! Skeleton! I wonder if it wants to..."},
+	"002" : {"name": "Alvarius", "text": "Nope, that sword is being swung with malicious intent."},
+	"003" : {"name": "???", "text": "Are you seriously telling me that you wanted to talk this thing out of murdering you?"},
+	"004" : {"name": "Alvarius", "text": "Listen, I thought maybe it would listen to me. Who are you anyway?"},
+	"005" : {"name": "???", "text": "I'll explain once we're in the clear. For now, we just need to get off this cliff. And no, we won't be jumping"},
+	"006" : {"name": "Alvarius", "text": "I wasn't thinking that... not at all..."},
+	"007" : {"name": "Alvarius", "text": "Left click that skeleton to freeze it and then run out of it's line of sight. That should get you time to escape."}
+}

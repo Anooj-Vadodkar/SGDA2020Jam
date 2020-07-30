@@ -1,0 +1,55 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/EXP-System-Dialog/Resource_BakedStory/EXP_BakedStory.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+TYPE = "EXP_Baked_Story"
+story = {
+1: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<speaker>Alvarius</speaker>
+<dialog>Wha- Who the hell are you?</dialog>"
+},
+2: {
+"links": {
+0: 3
+},
+"text": "<speaker>???</speaker>
+<dialog>I'll explain in a second, just stop that 
+thing right now! </dialog>"
+},
+3: {
+"links": {
+0: 4
+},
+"text": "<speaker>Alvarius</speaker>
+<dialog>How am I supposed to do that? I don't have a 
+weapon on me!</dialog>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<speaker>???</speaker>
+<dialog>Left click it and just run away. If you freeze it
+and get out of it's line of sight, it can't hurt
+you.</dialog>"
+},
+5: {
+"links": {
+
+},
+"text": "<speaker>Alvarius</speaker>
+<dialog>Okay! Freeze it and run! Got it!</dialog>"
+}
+}
+}
+}
+names = {
+"Player/Friend1": 1
+}

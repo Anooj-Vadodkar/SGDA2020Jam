@@ -14,7 +14,7 @@ var directionChange = false;
 var placePushed = "right"
 var buttonEvent
 var secondaryTimer 
-onready var animatedSprite = $MovingSkeleton
+onready var animatedSprite = $Animations
 onready var leftArrow = $LeftArrow
 onready var rightArrow = $RightArrow
 onready var downArrow = $DownArrow

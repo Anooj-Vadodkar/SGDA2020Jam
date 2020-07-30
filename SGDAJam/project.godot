@@ -19,6 +19,14 @@ config/name="SGDAJam"
 run/main_scene="res://InitialSceneForTestingPurposes.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/dpi/allow_hidpi=true
+
+[editor_plugins]
+
+enabled=PoolStringArray( "EXP-System-Dialog" )
+
 [importer_defaults]
 
 texture={

@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://DialogueRelatedAssets/next-indicator.png" type="Texture" id=2]
+[ext_resource path="res://ArcaMajora3-Heavy.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://DialogueRelatedAssets/dialogbackground.png" type="Texture" id=4]
+[ext_resource path="res://DialogBox.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Schmovin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 827.363, 471.525 ), Vector2( 827.363, 481.525 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -600.0
+margin_right = -472.0
+margin_bottom = -560.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="DialogBox"]
+anchor_left = 13.285
+anchor_top = 15.089
+anchor_right = 13.285
+anchor_bottom = 15.089
+margin_left = -326.488
+margin_top = -218.6
+margin_right = 326.512
+margin_bottom = -99.6005
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogBox"]
+anchor_left = 5.175
+anchor_top = 9.65
+anchor_right = 21.4
+anchor_bottom = 12.55
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -4.00006
+margin_bottom = -7.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Alvarius: Where... where am I?"
+text = "Alvarius: Where... where am I?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="DialogBox"]
+position = Vector2( 828.358, 474.386 )
+scale = Vector2( 0.591131, 0.549042 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Sprite"]
+autoplay = "Schmovin"
+anims/Schmovin = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="DialogBox"]
