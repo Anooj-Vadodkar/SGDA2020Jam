@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SGDAJam"
-run/main_scene="res://InitialSceneForTestingPurposes.tscn"
+run/main_scene="res://Scenes/Game.tscn"
 
 [display]
 

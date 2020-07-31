@@ -50,7 +50,8 @@ func _physics_process(delta):
 				else:
 					velocity = Vector2.ZERO
 			pass
-		
+		DIE:
+			queue_free()
 			pass
 	velocity = move_and_slide(velocity)
 func seekPlayer():
@@ -65,9 +66,6 @@ func seekPlayer():
 
 func _on_CutsceneOne_cutscene_started():
 	state = CUTSCENE
-	
-	
-	pass # Replace with function body.
 
 
 func _on_DialogBox1_cutscene_ended():
@@ -76,9 +74,10 @@ func _on_DialogBox1_cutscene_ended():
 
 func _on_Cliff1_cliff_fall():
 	state = DIE
-	pass # Replace with function body.
-	
+
 func _on_Cliff2_cliff_fall():
 	state = DIE
+
+
 func _on_Cliff3_cliff_fall():
 	state = DIE

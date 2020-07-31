@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 enum{
 	NORMAL,
-	CUTSCENE
+	CUTSCENE,
+	DIE
 }
+var health = 3
 const ACCELERATION = 1000
 const MAX_SPEED = 200
 const FRICTION = 1500
@@ -12,6 +14,8 @@ var facingRight = true
 onready var animationPlayer = $AnimationPlayer
 signal cutscene_started
 signal cutscene_ended
+signal cliff_fall
+signal damage_taken
 var state = CUTSCENE
 
 func _physics_process(delta):
@@ -41,12 +45,15 @@ func _physics_process(delta):
 				animationPlayer.play("WhenYouStandinRight")
 			animationPlayer.play("WhenYouStandinLeft")
 			velocity = Vector2.ZERO
+		DIE:
+			get_tree().change_scene("res://Scenes/GameOverScene.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 
 func _on_CutsceneOne_cutscene_started():
+	health = 3
 	state = CUTSCENE
 	
 
@@ -61,3 +68,24 @@ func _on_Cutscene_Two_cutscene_started():
 
 func _on_DialogBox_cutscene_ended():
 	state = NORMAL
+
+
+func _on_Area2D_body_entered(body):
+	if health > 1:
+		health = health-1
+		emit_signal("damage_taken")
+	else:
+		state = DIE
+	
+
+
+func _on_Cliff1_cliff_fall():
+	state = DIE
+
+
+func _on_Cliff2_body_entered(body):
+	state = DIE
+
+
+func _on_Cliff3_body_entered(body):
+	state = DIE
