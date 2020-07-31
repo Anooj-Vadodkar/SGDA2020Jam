@@ -7,14 +7,12 @@ extends Area2D
 
 
 signal cliff_fall
-
-
-
-
+signal cliff_fall_playe
 
 func _on_Cliff1_body_entered(body):
-	print("hi")
+	
 	if body.collision_layer == 1:
+		print("hi")
 		emit_signal("cliff_fall_enemy")
 	else:
 		emit_signal("cliff_fall_player")

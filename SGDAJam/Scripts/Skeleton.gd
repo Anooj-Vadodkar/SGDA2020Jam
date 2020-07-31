@@ -72,12 +72,13 @@ func _on_DialogBox1_cutscene_ended():
 	state = IDLE
 
 
-func _on_Cliff1_cliff_fall():
-	state = DIE
-
-func _on_Cliff2_cliff_fall():
+func _on_Cliff1_body_entered(body):
 	state = DIE
 
 
-func _on_Cliff3_cliff_fall():
+func _on_Cliff2_body_entered(body):
+	state = DIE
+	
+
+func _on_Cliff3_body_entered(body):
 	state = DIE

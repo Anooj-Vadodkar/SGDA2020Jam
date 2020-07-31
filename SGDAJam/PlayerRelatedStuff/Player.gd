@@ -78,14 +78,16 @@ func _on_Area2D_body_entered(body):
 		state = DIE
 	
 
-
-func _on_Cliff1_cliff_fall():
-	state = DIE
-
-
 func _on_Cliff2_body_entered(body):
-	state = DIE
+	if body.collision_layer == 2:
+		state = DIE
 
 
 func _on_Cliff3_body_entered(body):
-	state = DIE
+	if body.collision_layer == 2:
+		state = DIE
+
+
+func _on_Cliff1_body_entered(body):
+	if body.collision_layer == 2:
+		state = DIE

@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://Scripts/ClickyClicky.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Coffin4Movement.gd" type="Script" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://DialogBox.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/Cutscene Two.gd" type="Script" id=16]
 [ext_resource path="res://Scripts/CutsceneOne.gd" type="Script" id=17]
-[ext_resource path="res://Scripts/FallOffCliff.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Coffin4.gd" type="Script" id=19]
 [ext_resource path="res://Scripts/TreeLog3.gd" type="Script" id=20]
 [ext_resource path="res://EnemyAssets/PlayerDetectionZone.tscn" type="PackedScene" id=21]
@@ -935,7 +934,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 286, 46 )
 
 [node name="Cliff1" type="Area2D" parent="cliff"]
-script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cliff/Cliff1"]
 shape = SubResource( 23 )
@@ -948,7 +946,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 665, 49 )
 
 [node name="Cliff2" type="Area2D" parent="cliff2"]
-script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cliff2/Cliff2"]
 shape = SubResource( 24 )
@@ -962,7 +959,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 665, 40 )
 
 [node name="Cliff3" type="Area2D" parent="cliff3"]
-script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cliff3/Cliff3"]
 shape = SubResource( 25 )
@@ -1216,7 +1212,7 @@ shape = SubResource( 78 )
 position = Vector2( -1039.47, 386.034 )
 scale = Vector2( 1.94234, 1.71492 )
 frames = SubResource( 82 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite"]
@@ -1334,8 +1330,8 @@ shape = SubResource( 94 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 810.631, 326.936 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
@@ -1399,17 +1395,15 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 2212, 972 )
 [connection signal="body_entered" from="cliff/Cliff1" to="cliff/Cliff1" method="_on_Cliff1_body_entered"]
-[connection signal="cliff_fall" from="cliff/Cliff1" to="Skeleton" method="_on_Cliff1_cliff_fall"]
-[connection signal="cliff_fall" from="cliff/Cliff1" to="Player" method="_on_Cliff1_cliff_fall"]
+[connection signal="body_entered" from="cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
+[connection signal="body_entered" from="cliff/Cliff1" to="Player" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="cliff2/Cliff2" to="cliff2/Cliff2" method="_on_Cliff2_body_entered"]
+[connection signal="body_entered" from="cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="cliff2/Cliff2" to="Player" method="_on_Cliff2_body_entered"]
-[connection signal="cliff_fall" from="cliff2/Cliff2" to="Skeleton/Area2D" method="_on_Cliff2_cliff_fall"]
-[connection signal="cliff_fall" from="cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_cliff_fall"]
-[connection signal="cliff_fall" from="cliff2/Cliff2" to="Skeleton" method="_on_Area2D_cliff_fall"]
 [connection signal="body_entered" from="cliff3/Cliff3" to="cliff3/Cliff3" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="cliff3/Cliff3" to="cliff3/Cliff3" method="_on_Cliff3_body_entered"]
+[connection signal="body_entered" from="cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="cliff3/Cliff3" to="Player" method="_on_Cliff3_body_entered"]
-[connection signal="cliff_fall" from="cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_cliff_fall"]
 [connection signal="cliff_fall" from="Skeleton" to="Skeleton" method="_on_Skeleton_cliff_fall"]
 [connection signal="body_entered" from="Skeleton/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="CutsceneOne" to="CutsceneOne" method="_on_CutsceneOne_area_entered"]
