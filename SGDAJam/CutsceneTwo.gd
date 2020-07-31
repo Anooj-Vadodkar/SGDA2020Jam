@@ -7,10 +7,11 @@ extends Area2D
 signal cutscene_started
 signal cutscene_ended
 
-func _on_CutsceneOne_area_entered(area):
+func _on_CutsceneTwo_area_entered(area):
+	print("hi")
 	emit_signal("cutscene_started") 
 
 
 
-func _on_CutsceneOne_cutscene_ended():
+func _on_CutsceneTwo_cutscene_ended():
 	self.remove_and_skip()

@@ -5,10 +5,12 @@ enum{
 	CUTSCENE,
 	IDLE,
 	WANDER,
-	CHASE
+	CHASE,
+	DIE
 }
 signal cutscene_started
 signal cutscene_ended
+signal cliff_fall
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
@@ -48,6 +50,8 @@ func _physics_process(delta):
 				else:
 					velocity = Vector2.ZERO
 			pass
+		
+			pass
 	velocity = move_and_slide(velocity)
 func seekPlayer():
 	if(playerDetectionZone.canSeePlayer()):
@@ -68,3 +72,13 @@ func _on_CutsceneOne_cutscene_started():
 
 func _on_DialogBox1_cutscene_ended():
 	state = IDLE
+
+
+func _on_Cliff1_cliff_fall():
+	state = DIE
+	pass # Replace with function body.
+	
+func _on_Cliff2_cliff_fall():
+	state = DIE
+func _on_Cliff3_cliff_fall():
+	state = DIE

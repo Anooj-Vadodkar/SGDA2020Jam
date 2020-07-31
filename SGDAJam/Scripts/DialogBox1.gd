@@ -7,7 +7,7 @@ var dialog = ["Alvarius: Where... where am I?", "Alvarius: Whoa! A skeleton! I w
 
 var dialog_index = 0
 var finished = false
-signal cutscene_ended
+signal cutscene_ended 
 func _ready():
 	load_dialog()
 

@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="SGDAJam"
 run/main_scene="res://InitialSceneForTestingPurposes.tscn"
-config/icon="res://icon.png"
 
 [display]
 
@@ -25,7 +24,7 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "EXP-System-Dialog" )
+enabled=PoolStringArray(  )
 
 [importer_defaults]
 

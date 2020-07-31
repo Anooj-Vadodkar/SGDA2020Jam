@@ -37,6 +37,9 @@ func _physics_process(delta):
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			velocity = move_and_slide(velocity)
 		CUTSCENE:
+			if(facingRight):
+				animationPlayer.play("WhenYouStandinRight")
+			animationPlayer.play("WhenYouStandinLeft")
 			velocity = Vector2.ZERO
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -49,4 +52,12 @@ func _on_CutsceneOne_cutscene_started():
 
 
 func _on_DialogBox1_cutscene_ended():
+	state = NORMAL
+
+
+func _on_Cutscene_Two_cutscene_started():
+	state = CUTSCENE
+
+
+func _on_DialogBox_cutscene_ended():
 	state = NORMAL
