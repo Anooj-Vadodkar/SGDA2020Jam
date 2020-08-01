@@ -4,7 +4,7 @@ extends Control
 var dialog = ["Alvarius: Oh great, something's in the way.", "???: Perhaps jumping off wasn't such a bad idea...", 
  "???: Anyway, we've got time now. That thing isn't following us, so we should be safe here.",
 "Alvarius: Great! Now you can tell me who you are!", 
-"???: I suppose I owe you that much. My name is Daria.", "Alvarius: Hah, there was a Daria online I'm good friends with. What a coincidence",
+"???: I suppose I owe you that much. My name is Daria.", "Alvarius: Hah, there was a Daria online I'm good friends with. What a coincidence.",
 "Daria: ... Are you referring to the House of Joy?", "Alvarius: Oh my god. You're THAT Daria? Why can't I see you?",
 "Daria: Excellent question. Perhaps I'm just a part of your subconscious right now, though it's quite empty in here.",
 "Alvarius: Thanks.", "???: If you two are done, I think I can be of assistance. This mystery grows deeper the more I'm silent.",

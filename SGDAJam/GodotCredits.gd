@@ -25,9 +25,11 @@ var credits = [
 		"The Beginning Of A Tale"
 	],[
 		"Programming, Writing, General Game Design",
+		"",
 		"Anooj Vadodkar",
 	],[
 		"Assets Used",
+		"",
 		"Overworld Textures by ArMM1998: https://opengameart.org/content/zelda-like-tilesets-and-sprites",
 		"",
 		"Sword Skeleton by Sanctum Pixel: https://sanctumpixel.itch.io/sword-skeleton-pixel-art-character",
@@ -44,12 +46,13 @@ var credits = [
 	],[
 		"Music",
 		"",
+		"The Title Theme is: A Dream of First Flight Composed by Jonathan Shaw (www.jshaw.co.uk)",
+		"",
 		"Town Theme by CynicMusic: cynicmusic.com pixelsphere.org",
 		"",
 		"Battle Theme by Wolfgang: https://opengameart.org/content/battle-theme-0",
 		"",
 		"Final Theme by Joth: https://opengameart.org/content/jrpg2-piano"
-		
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
@@ -97,10 +100,9 @@ func _process(delta):
 func finish():
 	if not finished:
 		finished = true
-		get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 		# NOTE: This is called when the credits finish
 		# - Hook up your code to return to the relevant scene here, eg...
-		#get_tree().change_scene("res://scenes/MainMenu.tscn")
+		get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 
 
 func add_line():

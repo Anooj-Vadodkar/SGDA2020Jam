@@ -4,8 +4,7 @@
 [ext_resource path="res://ArcaMajora3-Heavy.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://DialogueRelatedAssets/dialogbackground.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Continue.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Quit.gd" type="Script" id=5]
-
+[ext_resource path="res://Scripts/QuitGameOver.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -48,6 +47,9 @@ margin_right = -0.141998
 margin_bottom = 0.349976
 texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
 margin_left = -85.6266
@@ -72,6 +74,9 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 text = "Yes"
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Quit" type="Button" parent="CanvasLayer/Control"]
 margin_left = 258.678

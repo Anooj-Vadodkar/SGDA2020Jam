@@ -71,11 +71,11 @@
 [ext_resource path="res://WorldAssets/Keys/GreenKey.png" type="Texture" id=69]
 [ext_resource path="res://Scripts/DialogBox6.gd" type="Script" id=70]
 [ext_resource path="res://WorldAssets/Physical World Objects/LockedDoorButOpen.png" type="Texture" id=71]
-[ext_resource path="res://Music/Battle.wav" type="AudioStream" id=72]
+[ext_resource path="res://Music/TownTheme.ogg" type="AudioStream" id=72]
 [ext_resource path="res://Scenes/BattleTheme.gd" type="Script" id=73]
-[ext_resource path="res://Music/TownTheme.wav" type="AudioStream" id=74]
+[ext_resource path="res://Music/FinalTheme.ogg" type="AudioStream" id=74]
 [ext_resource path="res://Scripts/Town Theme.gd" type="Script" id=75]
-[ext_resource path="res://Music/JRPG2 Piano.wav" type="AudioStream" id=76]
+[ext_resource path="res://Music/Battle.ogg" type="AudioStream" id=76]
 [ext_resource path="res://WorldAssets/clipart939762.png" type="Texture" id=77]
 [ext_resource path="res://Scripts/CutsceneNine.gd" type="Script" id=78]
 [ext_resource path="res://Scripts/DialogBox7.gd" type="Script" id=79]
@@ -1455,7 +1455,7 @@ position = Vector2( 41.3668, 4.45654 )
 scale = Vector2( 0.748433, 0.713212 )
 frames = SubResource( 68 )
 animation = "New Anim"
-frame = 19
+frame = 10
 playing = true
 offset = Vector2( 5, 0 )
 
@@ -2600,7 +2600,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 2212, 972 )
 
 [node name="Dead Tree" type="Sprite" parent="."]
-position = Vector2( -1034.43, -740.843 )
+position = Vector2( -1034.43, -718.873 )
 scale = Vector2( 0.0723451, 0.0718556 )
 texture = ExtResource( 77 )
 
@@ -2608,22 +2608,22 @@ texture = ExtResource( 77 )
 position = Vector2( -3.60498, -18.025 )
 
 [node name="Town Theme" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 74 )
+stream = ExtResource( 72 )
 volume_db = -10.0
 script = ExtResource( 75 )
 
 [node name="BattleTheme" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 72 )
+stream = ExtResource( 76 )
 volume_db = -10.0
 autoplay = true
 script = ExtResource( 73 )
 
 [node name="FinalTheme" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 76 )
+stream = ExtResource( 74 )
 script = ExtResource( 82 )
 
 [node name="CreditsWarp" type="Area2D" parent="."]
-position = Vector2( -1033.75, -631.052 )
+position = Vector2( -1029.87, -607.79 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CreditsWarp"]
 position = Vector2( 7.36646, 12.2773 )
@@ -2646,20 +2646,20 @@ __meta__ = {
 "anims/New Anim" = SubResource( 136 )
 anims/NoAnimation = SubResource( 137 )
 [connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="FallableCliffs/cliff/Cliff1" method="_on_Cliff1_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Player" method="_on_Cliff1_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="FallableCliffs/cliff2/Cliff2" method="_on_Cliff2_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Player" method="_on_Cliff2_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="FallableCliffs/cliff3/Cliff3" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="FallableCliffs/cliff3/Cliff3" method="_on_Cliff2_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Player" method="_on_Cliff3_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/Cliff4/Cliff4" to="SecondSkeleton" method="_on_Cliff4_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/Cliff4/Cliff4" to="Player" method="_on_Cliff4_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/Cliff4/Cliff4" to="SecondSkeleton" method="_on_Cliff4_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/Cliff5/Cliff5" to="SecondSkeleton" method="_on_Cliff5_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/Cliff6/Cliff6" to="SecondSkeleton" method="_on_Cliff6_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/Cliff6/Cliff6" to="Player" method="_on_Cliff6_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/Cliff6/Cliff6" to="SecondSkeleton" method="_on_Cliff6_body_entered"]
 [connection signal="cliff_fall" from="Skeleton" to="Skeleton" method="_on_Skeleton_cliff_fall"]
 [connection signal="body_entered" from="Skeleton/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="SecondSkeleton/PlayerInteraction" to="Player" method="_on_PlayerInteraction_body_entered"]
@@ -2669,77 +2669,77 @@ anims/NoAnimation = SubResource( 137 )
 [connection signal="area_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_area_entered"]
 [connection signal="body_shape_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_body_shape_entered"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_cutscene_ended"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Player" method="_on_CutsceneOne_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Cutscenes/CutsceneOne" method="_on_DialogBox1_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Player" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Cutscenes/CutsceneOne" method="_on_DialogBox1_cutscene_ended"]
 [connection signal="area_entered" from="Cutscenes/CutsceneTwo" to="Cutscenes/CutsceneTwo" method="_on_Cutscene_Two_area_entered"]
 [connection signal="body_entered" from="Cutscenes/CutsceneTwo" to="Cutscenes/CutsceneTwo" method="_on_Cutscene_Two_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTwo" to="Player" method="_on_Cutscene_Two_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTwo" to="Cutscenes/CutsceneTwo/Control/DialogBox" method="_on_Cutscene_Two_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Cutscenes/CutsceneTwo" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Cutscenes/CutsceneTwo" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Cutscenes/CutsceneTwo/Control/DialogBox" method="_on_DialogBox_cutscene_started"]
 [connection signal="body_entered" from="Cutscenes/CutsceneThree" to="Cutscenes/CutsceneThree" method="_on_CutsceneThree_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneThree" to="Player" method="_on_CutsceneThree_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneThree" to="Cutscenes/CutsceneThree/Control/DialogBox" method="_on_CutsceneThree_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Cutscenes/CutsceneThree" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Music/BattleTheme" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Music/Town Theme" method="_on_DialogBox_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Cutscenes/CutsceneThree" method="_on_DialogBox_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneFour" to="Cutscenes/CutsceneFour" method="_on_CutsceneFour_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneFour" to="Player" method="_on_CutsceneFour_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneFour" to="Cutscenes/CutsceneFour/Control/DialogBox2" method="_on_CutsceneFour_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneFour" to="LockedDoor" method="_on_CutsceneFour_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox2_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox2_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox2_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneFive" to="Cutscenes/CutsceneFive" method="_on_CutsceneFive_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneFive" to="Player" method="_on_CutsceneFive_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneFive" to="Cutscenes/CutsceneFive/Control/DialogBox3" method="_on_CutsceneFive_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneFive" to="LockedDoor" method="_on_CutsceneFive_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneFive/Control/DialogBox3" to="Cutscenes/CutsceneFive" method="_on_DialogBox3_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneFive/Control/DialogBox3" to="Player" method="_on_DialogBox3_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFive/Control/DialogBox3" to="Cutscenes/CutsceneFive" method="_on_DialogBox3_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneSix" to="Cutscenes/CutsceneSix" method="_on_CutsceneSix_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneSix" to="Player" method="_on_CutsceneSix_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneSix" to="Cutscenes/CutsceneSix/Control/DialogBox4" method="_on_CutsceneSix_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneSix" to="LockedDoor" method="_on_CutsceneSix_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneSix/Control/DialogBox4" to="Cutscenes/CutsceneSix" method="_on_DialogBox4_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneSix/Control/DialogBox4" to="Player" method="_on_DialogBox4_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneSix/Control/DialogBox4" to="Cutscenes/CutsceneSix" method="_on_DialogBox4_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneSeven" to="Cutscenes/CutsceneSeven" method="_on_CutsceneSeven_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneSeven" to="Player" method="_on_CutsceneSeven_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneSeven" to="Cutscenes/CutsceneSeven/Control/DialogBox5" method="_on_CutsceneSeven_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneSeven/Control/DialogBox5" to="Cutscenes/CutsceneSeven" method="_on_DialogBox5_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneSeven/Control/DialogBox5" to="Player" method="_on_DialogBox5_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneSeven/Control/DialogBox5" to="Cutscenes/CutsceneSeven" method="_on_DialogBox5_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneEight" to="Cutscenes/CutsceneEight" method="_on_CutsceneEight_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneEight" to="Player" method="_on_CutsceneEight_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneEight" to="Cutscenes/CutsceneEight/Control/DialogBox6" method="_on_CutsceneEight_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneEight" to="LockedDoor" method="_on_CutsceneEight_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneEight/Control/DialogBox6" to="Cutscenes/CutsceneEight" method="_on_DialogBox6_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneEight/Control/DialogBox6" to="Player" method="_on_DialogBox6_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneEight/Control/DialogBox6" to="Cutscenes/CutsceneEight" method="_on_DialogBox6_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneNine" to="Cutscenes/CutsceneNine" method="_on_CutsceneNine_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneNine" to="Player" method="_on_CutsceneNine_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneNine" to="Cutscenes/CutsceneNine/Control/DialogBox7" method="_on_CutsceneNine_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="Cutscenes/CutsceneNine" method="_on_DialogBox7_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="LockedDoor" method="_on_DialogBox7_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="Player" method="_on_DialogBox7_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="Cutscenes/CutsceneNine" method="_on_DialogBox7_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneTen" to="Cutscenes/CutsceneTen" method="_on_CutsceneTen_body_entered"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTen" to="Player" method="_on_CutsceneTen_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTen" to="Cutscenes/CutsceneTen/Control/DialogBox8" method="_on_CutsceneTen_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Cutscenes/CutsceneTen" method="_on_DialogBox8_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Music/FinalTheme" method="_on_DialogBox8_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Music/Town Theme" method="_on_DialogBox8_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="LockedDoor" method="_on_DialogBox7_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Player" method="_on_DialogBox8_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Music/Town Theme" method="_on_DialogBox8_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Music/FinalTheme" method="_on_DialogBox8_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Cutscenes/CutsceneTen" method="_on_DialogBox8_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneEleven" to="Cutscenes/CutsceneEleven" method="_on_CutsceneEleven_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneEleven" to="Cutscenes/CutsceneEleven" method="_on_CutsceneEleven_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneEleven" to="Player" method="_on_CutsceneEleven_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneEleven" to="Cutscenes/CutsceneEleven/Control/DialogBox9" method="_on_CutsceneEleven_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Cutscenes/CutsceneEleven" method="_on_DialogBox9_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Music/Town Theme" method="_on_DialogBox9_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneEleven" to="Cutscenes/CutsceneEleven" method="_on_CutsceneEleven_cutscene_started"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Player" method="_on_DialogBox9_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Music/Town Theme" method="_on_DialogBox9_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Cutscenes/CutsceneEleven" method="_on_DialogBox9_cutscene_ended"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Cutscenes/CutsceneEleven/Control/DialogBox9" method="_on_DialogBox9_cutscene_started"]
 [connection signal="key_found" from="RedKey" to="LockedDoor" method="_on_RedKey_key_found"]
 [connection signal="body_entered" from="RedKey/Area2D" to="RedKey/Area2D" method="_on_Area2D_body_entered"]
