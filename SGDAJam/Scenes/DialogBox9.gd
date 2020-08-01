@@ -39,6 +39,7 @@ func load_dialog():
 		$Tween.start()
 	else:
 		emit_signal("cutscene_ended")
+		print("goodbye")
 		get_parent().get_parent().collision_layer = 3
 		get_parent().get_parent().collision_mask = 3
 		queue_free()

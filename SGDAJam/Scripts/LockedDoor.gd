@@ -12,7 +12,7 @@ onready var open_sprite = $OpenSprite
 onready var cutscene_nine = get_node("../Cutscenes/CutsceneNine")
 var barrier_has_been_deleted = false
 var cutscene_played = false
-var keys = 5
+var keys = 0
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	if keys == 5:

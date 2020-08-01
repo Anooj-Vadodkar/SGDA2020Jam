@@ -8,7 +8,7 @@ enum{
 }
 var health = 4
 const ACCELERATION = 1000
-const MAX_SPEED = 200
+var max_speed = 200
 const FRICTION = 1500
 var velocity = Vector2.ZERO
 var facingRight = false
@@ -19,6 +19,7 @@ signal cliff_fall
 signal damage_taken
 var state = CUTSCENE
 onready var healthUI = get_node("Camera2D/Health UI")
+var timer = null
 func _physics_process(delta):
 	match state:
 		NORMAL:
@@ -33,7 +34,7 @@ func _physics_process(delta):
 				else:
 					facingRight = false
 					animationPlayer.play("WhenYouWalkinLeft")
-				velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+				velocity = velocity.move_toward(input_vector * max_speed, ACCELERATION * delta)
 			else:
 				if facingRight:
 					animationPlayer.play("WhenYouStandinRight")
@@ -50,9 +51,12 @@ func _physics_process(delta):
 		DIE:
 			get_tree().change_scene("res://Scenes/GameOverScene.tscn")
 		FINAL_SCENE:
-			animationPlayer.play("WhenYouStandinRight")
+			get_node("../FadeOut/AnimationPlayer").play("New Anim")
 			velocity.x = 0
-			velocity = velocity.move_toward(MAX_SPEED, ACCELERATION * delta)
+			max_speed = 100
+			velocity = velocity.move_toward(Vector2.UP*max_speed, ACCELERATION * delta)
+			animationPlayer.play("WhenYouWalkin")
+			velocity = move_and_slide(velocity)
 
 func _on_CutsceneOne_cutscene_started():
 	healthUI.set_hearts(4)
@@ -118,8 +122,16 @@ func _on_DialogBox7_cutscene_ended():
 func _on_CutsceneTen_cutscene_started():
 	state = CUTSCENE
 func _on_DialogBox8_cutscene_ended():
+	max_speed = 100
 	state = NORMAL
 func _on_DialogBox9_cutscene_ended():
 	state = FINAL_SCENE
 func _on_CutsceneEleven_cutscene_started():
 	state = CUTSCENE
+func _on_CreditsWarp_body_entered(body):
+	
+	state = CUTSCENE
+	get_tree().change_scene("res://GodotCredits.tscn")
+	yield(get_tree().create_timer(2.5), "timeout")
+	
+
