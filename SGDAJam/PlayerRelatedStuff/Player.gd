@@ -91,3 +91,15 @@ func _on_Cliff3_body_entered(body):
 func _on_Cliff1_body_entered(body):
 	if body.collision_layer == 2:
 		state = DIE
+
+
+func _on_CutsceneThree_cutscene_started():
+	state = CUTSCENE
+
+
+func _on_CutsceneFour_cutscene_started():
+	state = CUTSCENE
+
+
+func _on_DialogBox2_cutscene_ended():
+	state = NORMAL

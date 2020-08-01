@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=2]
+[gd_scene load_steps=161 format=2]
 
 [ext_resource path="res://Scripts/ClickyClicky.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Coffin4Movement.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://DialogBox.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/Cutscene Two.gd" type="Script" id=16]
 [ext_resource path="res://Scripts/CutsceneOne.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/DialogBox.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Coffin4.gd" type="Script" id=19]
 [ext_resource path="res://Scripts/TreeLog3.gd" type="Script" id=20]
 [ext_resource path="res://EnemyAssets/PlayerDetectionZone.tscn" type="PackedScene" id=21]
@@ -44,9 +45,14 @@
 [ext_resource path="res://WorldAssets/cliff.png" type="Texture" id=43]
 [ext_resource path="res://EnemyAssets/spritesheet (1).png" type="Texture" id=44]
 [ext_resource path="res://EnemyAssets/Arrows/Arrows.png" type="Texture" id=45]
-[ext_resource path="res://Scenes/Health UI.gd" type="Script" id=46]
+[ext_resource path="res://Scripts/Health UI.gd" type="Script" id=46]
 [ext_resource path="res://PlayerRelatedStuff/heart.png" type="Texture" id=47]
 [ext_resource path="res://PlayerRelatedStuff/heartmissing.png" type="Texture" id=48]
+[ext_resource path="res://Scripts/CutsceneThree.gd" type="Script" id=49]
+[ext_resource path="res://Scripts/CutsceneFour.gd" type="Script" id=50]
+[ext_resource path="res://WorldAssets/Key.png" type="Texture" id=51]
+[ext_resource path="res://Scripts/DialogBox2.gd" type="Script" id=52]
+[ext_resource path="res://WorldAssets/LockedDoor.png" type="Texture" id=53]
 
 [sub_resource type="TileSet" id=1]
 0/name = "MoreFunGrassTiles1.png 0"
@@ -562,118 +568,158 @@ extents = Vector2( 23.9486, 24.1595 )
 [sub_resource type="CircleShape2D" id=69]
 radius = 160.926
 
-[sub_resource type="CircleShape2D" id=70]
-radius = 13.6755
-
-[sub_resource type="DynamicFont" id=71]
-font_data = ExtResource( 23 )
-
-[sub_resource type="Animation" id=72]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
-}
-
-[sub_resource type="CircleShape2D" id=73]
-radius = 47.3113
-
-[sub_resource type="DynamicFont" id=74]
-font_data = ExtResource( 23 )
-
-[sub_resource type="Animation" id=75]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=76]
+[sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 40.5508, 42.3342 )
 
-[sub_resource type="RectangleShape2D" id=77]
+[sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 33.9638, 37.2444 )
 
-[sub_resource type="RectangleShape2D" id=78]
+[sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 35.3585, 36.3335 )
 
-[sub_resource type="AtlasTexture" id=79]
+[sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 0, 48, 47 )
 
-[sub_resource type="AtlasTexture" id=80]
+[sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 27 )
 region = Rect2( 48, 0, 48, 47 )
 
-[sub_resource type="AtlasTexture" id=81]
+[sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 27 )
 region = Rect2( 96, 0, 48, 47 )
 
-[sub_resource type="SpriteFrames" id=82]
+[sub_resource type="SpriteFrames" id=76]
 animations = [ {
-"frames": [ SubResource( 79 ), SubResource( 80 ), SubResource( 81 ) ],
+"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 75 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=83]
+[sub_resource type="CircleShape2D" id=77]
 radius = 24.6518
 
-[sub_resource type="RectangleShape2D" id=84]
+[sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 10, 12.4695 )
 
-[sub_resource type="CircleShape2D" id=85]
+[sub_resource type="CircleShape2D" id=79]
 radius = 18.4623
 
-[sub_resource type="CircleShape2D" id=86]
+[sub_resource type="CircleShape2D" id=80]
 
-[sub_resource type="RectangleShape2D" id=87]
+[sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 10, 12.3915 )
 
-[sub_resource type="RectangleShape2D" id=88]
+[sub_resource type="RectangleShape2D" id=82]
 
-[sub_resource type="RectangleShape2D" id=89]
+[sub_resource type="RectangleShape2D" id=83]
 extents = Vector2( 15.5504, 21.2646 )
 
-[sub_resource type="CircleShape2D" id=90]
+[sub_resource type="CircleShape2D" id=84]
 radius = 21.403
 
-[sub_resource type="CircleShape2D" id=91]
+[sub_resource type="CircleShape2D" id=85]
 
-[sub_resource type="RectangleShape2D" id=92]
+[sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 10, 15.2795 )
 
-[sub_resource type="CircleShape2D" id=93]
+[sub_resource type="CircleShape2D" id=87]
 radius = 17.9086
 
-[sub_resource type="RectangleShape2D" id=94]
+[sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 10, 26.0546 )
 
-[sub_resource type="CapsuleShape2D" id=95]
+[sub_resource type="RectangleShape2D" id=89]
+extents = Vector2( 46.8624, 38.1082 )
+
+[sub_resource type="Animation" id=90]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
+}
+
+[sub_resource type="DynamicFont" id=91]
+use_filter = true
+font_data = ExtResource( 23 )
+
+[sub_resource type="CircleShape2D" id=92]
+radius = 19.7421
+
+[sub_resource type="Animation" id=93]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=94]
+radius = 13.6755
+
+[sub_resource type="DynamicFont" id=95]
+font_data = ExtResource( 23 )
+
+[sub_resource type="Animation" id=96]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=97]
+radius = 17.7206
+
+[sub_resource type="DynamicFont" id=98]
+use_filter = true
+font_data = ExtResource( 23 )
+
+[sub_resource type="Animation" id=99]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 66.4998, 210.999 ), Vector2( 66.5, 220.999 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=100]
 radius = 17.3624
 height = 7.37756
 
-[sub_resource type="Animation" id=100]
-resource_name = "WhenYouDyin"
+[sub_resource type="Animation" id=101]
 
-[sub_resource type="Animation" id=96]
+[sub_resource type="Animation" id=102]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -699,7 +745,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=97]
+[sub_resource type="Animation" id=103]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -725,7 +771,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=98]
+[sub_resource type="Animation" id=104]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -753,7 +799,7 @@ tracks/1/keys = {
 "values": [ false, false, false, false, false, false, false, false, false ]
 }
 
-[sub_resource type="Animation" id=99]
+[sub_resource type="Animation" id=105]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -780,6 +826,11 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, true, true, true, true, true, true, true, true ]
 }
+
+[sub_resource type="RectangleShape2D" id=106]
+extents = Vector2( 42.6117, 40.546 )
+
+[sub_resource type="CapsuleShape2D" id=107]
 
 [node name="World" type="Node2D"]
 position = Vector2( -111.142, -16.8006 )
@@ -834,7 +885,7 @@ tile_data = PoolIntArray( 1900529, 0, 0, 1900530, 0, 1, 1900531, 0, 1, 1900532, 
 tile_set = SubResource( 16 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -65627, 0, 0, -65626, 0, 0, -65625, 0, 0, -65624, 0, 0, -65623, 0, 0, -65622, 0, 0, -65621, 0, 0, -65620, 0, 0, -65619, 0, 0, -65618, 0, 0, -65617, 0, 0, -65616, 0, 0, -65615, 0, 0, -65614, 0, 0, -65613, 0, 0, -65612, 0, 0, -65611, 0, 0, -65610, 0, 0, -65609, 0, 0, -65608, 0, 0, -65607, 0, 0, -65606, 0, 0, -65605, 0, 0, -65604, 0, 0, -65603, 0, 0, -65602, 0, 0, -65601, 0, 0, -65600, 0, 0, -65599, 0, 0, -65598, 0, 0, -65597, 0, 0, -65596, 0, 0, -65595, 0, 0, -65594, 0, 0, -65593, 0, 0, -65592, 0, 0, -65591, 0, 0, -65590, 0, 0, -65589, 0, 0, -65588, 0, 0, -65587, 0, 0, -65586, 0, 0, -65585, 0, 0, -65584, 0, 0, -65583, 0, 0, -65582, 0, 0, -65581, 0, 0, -65580, 0, 0, -65579, 0, 0, -65578, 0, 0, -65577, 0, 0, -65576, 0, 0, -91, 0, 0, -40, 0, 0, 65445, 0, 0, 65496, 0, 0, 130981, 0, 0, 131032, 0, 0, 196517, 0, 0, 196568, 0, 0, 262053, 0, 0, 262104, 0, 0, 327589, 0, 0, 327640, 0, 0, 393125, 0, 0, 393176, 0, 0, 327699, 0, 0, 458661, 0, 0, 458712, 0, 0, 458730, 0, 0, 458731, 0, 1, 458732, 0, 1, 458733, 0, 1, 458734, 0, 1, 458735, 0, 1, 458736, 0, 1, 458737, 0, 1, 458738, 0, 1, 458739, 0, 1, 458740, 0, 1, 458741, 0, 1, 458742, 0, 1, 458743, 0, 1, 458744, 0, 1, 458745, 0, 1, 458746, 0, 1, 458747, 0, 1, 458748, 0, 1, 458749, 0, 1, 458750, 0, 1, 458751, 0, 2, 393235, 0, 0, 524197, 0, 0, 524248, 0, 0, 524266, 0, 131072, 524267, 0, 131073, 524268, 0, 65537, 524269, 0, 65537, 524270, 0, 65537, 524271, 0, 0, 524272, 0, 0, 524273, 0, 0, 524274, 0, 0, 524275, 0, 0, 524276, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 131073, 524285, 0, 131073, 524286, 0, 131073, 524287, 0, 131074, 458771, 0, 0, 589733, 0, 0, 589784, 0, 0, 589802, 0, 65536, 589803, 0, 65537, 589804, 0, 0, 589805, 0, 0, 589806, 0, 0, 589807, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 65537, 589823, 0, 65538, 524307, 0, 0, 655269, 0, 0, 655320, 0, 0, 655338, 0, 131072, 655339, 0, 131073, 655340, 0, 131074, 655357, 0, 131072, 655358, 0, 131073, 655359, 0, 131074, 589843, 0, 0, 720805, 0, 0, 720856, 0, 0, 720874, 0, 65536, 720875, 0, 65537, 720876, 0, 131074, 720893, 0, 0, 720894, 0, 0, 720895, 0, 131074, 655379, 0, 0, 786341, 0, 0, 786392, 0, 0, 786410, 0, 0, 786411, 0, 0, 786412, 0, 0, 786413, 0, 0, 786430, 0, 0, 786431, 0, 0, 720915, 0, 0, 851877, 0, 0, 851928, 0, 0, 851946, 0, 0, 851967, 0, 0, 786451, 0, 0, 917413, 0, 0, 917464, 0, 0, 917482, 0, 0, 917503, 0, 0, 851987, 0, 0, 982949, 0, 0, 983000, 0, 0, 983018, 0, 0, 983039, 0, 0, 917523, 0, 0, 1048485, 0, 0, 1048536, 0, 0, 1048554, 0, 0, 1048575, 0, 0, 983059, 0, 0, 1114021, 0, 0, 1114072, 0, 0, 1114090, 0, 0, 1048595, 0, 0, 1179608, 0, 0, 1179626, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1245144, 0, 0, 1245145, 0, 0, 1245146, 0, 0, 1245147, 0, 0, 1245148, 0, 0, 1245149, 0, 0, 1245150, 0, 0, 1245151, 0, 0, 1245152, 0, 0, 1245153, 0, 0, 1245154, 0, 0, 1245155, 0, 0, 1245156, 0, 0, 1245157, 0, 0, 1245158, 0, 0, 1245159, 0, 0, 1245160, 0, 0, 1245161, 0, 0, 1245162, 0, 0, 1572864, 0, 0, 1572865, 0, 1, 1572866, 0, 1, 1572867, 0, 1, 1572868, 0, 1, 1572869, 0, 1, 1572870, 0, 1, 1572871, 0, 1, 1572872, 0, 1, 1572873, 0, 1, 1572874, 0, 1, 1572875, 0, 1, 1572876, 0, 1, 1572877, 0, 1, 1572878, 0, 1, 1572879, 0, 1, 1572880, 0, 1, 1572881, 0, 1, 1572882, 0, 1, 1572883, 0, 2, 1703896, 0, 0, 1703897, 0, 1, 1703898, 0, 1, 1703899, 0, 1, 1703900, 0, 1, 1703901, 0, 1, 1703902, 0, 1, 1703903, 0, 1, 1703904, 0, 1, 1703905, 0, 1, 1703906, 0, 1, 1703907, 0, 1, 1703908, 0, 1, 1703909, 0, 1, 1703910, 0, 1, 1703911, 0, 1, 1703912, 0, 1, 1703913, 0, 2, 1638400, 0, 65536, 1638401, 0, 65537, 1638402, 0, 65537, 1638403, 0, 131073, 1638404, 0, 65537, 1638405, 0, 65537, 1638406, 0, 65537, 1638407, 0, 65537, 1638408, 0, 65537, 1638409, 0, 131073, 1638410, 0, 65537, 1638411, 0, 131073, 1638412, 0, 131073, 1638413, 0, 65537, 1638414, 0, 65537, 1638415, 0, 131073, 1638416, 0, 131073, 1638417, 0, 131073, 1638418, 0, 131073, 1638419, 0, 65538, 1769432, 0, 131072, 1769433, 0, 65537, 1769434, 0, 65537, 1769435, 0, 65537, 1769436, 0, 131073, 1769437, 0, 131073, 1769438, 0, 131073, 1769439, 0, 131073, 1769440, 0, 65537, 1769441, 0, 65537, 1769442, 0, 65537, 1769443, 0, 131073, 1769444, 0, 131073, 1769445, 0, 65537, 1769446, 0, 65537, 1769447, 0, 131073, 1769448, 0, 131073, 1769449, 0, 131074, 1703936, 0, 131072, 1703937, 0, 65537, 1703938, 0, 131073, 1703939, 0, 131073, 1703940, 0, 131073, 1703941, 0, 131073, 1703942, 0, 65537, 1703943, 0, 131073, 1703944, 0, 131073, 1703945, 0, 65537, 1703946, 0, 131073, 1703947, 0, 131073, 1703948, 0, 65537, 1703949, 0, 65537, 1703950, 0, 131073, 1703951, 0, 65537, 1703952, 0, 131073, 1703953, 0, 65537, 1703954, 0, 131073, 1703955, 0, 131074, 1834968, 0, 131072, 1834969, 0, 65537, 1834970, 0, 131073, 1834971, 0, 131073, 1834972, 0, 65537, 1834973, 0, 65537, 1834974, 0, 131073, 1834975, 0, 131073, 1834976, 0, 65537, 1834977, 0, 65537, 1834978, 0, 65537, 1834979, 0, 65537, 1834980, 0, 131073, 1834981, 0, 131073, 1834982, 0, 65537, 1834983, 0, 65537, 1834984, 0, 131073, 1834985, 0, 65538, 1769472, 0, 0, 1769473, 0, 0, 1769474, 0, 0, 1769475, 0, 0, 1769476, 0, 0, 1769477, 0, 0, 1769478, 0, 0, 1769479, 0, 0, 1769480, 0, 0, 1769481, 0, 0, 1769482, 0, 0, 1769483, 0, 0, 1769484, 0, 0, 1769485, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1769489, 0, 0, 1769490, 0, 0, 1769491, 0, 131074, 1900504, 0, 65536, 1900505, 0, 131073, 1900506, 0, 65537, 1900507, 0, 65537, 1900508, 0, 131073, 1900509, 0, 131073, 1900510, 0, 131073, 1900511, 0, 65537, 1900512, 0, 131073, 1900513, 0, 131073, 1900514, 0, 131073, 1900515, 0, 65537, 1900516, 0, 65537, 1900517, 0, 65537, 1900518, 0, 131073, 1900519, 0, 131073, 1900520, 0, 65537, 1900521, 0, 65538, 1835026, 0, 65536, 1835027, 0, 131074, 1966040, 0, 0, 1966041, 0, 0, 1966042, 0, 0, 1966043, 0, 0, 1966044, 0, 0, 1966045, 0, 0, 1966046, 0, 0, 1966047, 0, 0, 1966048, 0, 0, 1966049, 0, 0, 1966050, 0, 0, 1966051, 0, 0, 1966052, 0, 0, 1966053, 0, 0, 1966054, 0, 0, 1966055, 0, 0, 1966056, 0, 0, 1966057, 0, 0, 1900562, 0, 131072, 1900563, 0, 65538, 2031576, 0, 0, 2031593, 0, 0, 2031594, 0, 0, 2031595, 0, 1, 2031596, 0, 2, 2031615, 0, 0, 1966098, 0, 65536, 1966099, 0, 65538, 2097112, 0, 0, 2097130, 0, 131072, 2097131, 0, 65537, 2097132, 0, 65538, 2097150, 0, 0, 2097151, 0, 0, 2031634, 0, 65536, 2031635, 0, 131074, 2162648, 0, 0, 2162666, 0, 131072, 2162667, 0, 65537, 2162668, 0, 65538, 2162686, 0, 65536, 2162687, 0, 65538, 2097170, 0, 65536, 2097171, 0, 65538, 2228184, 0, 0, 2228202, 0, 131072, 2228203, 0, 65537, 2228204, 0, 65538, 2228222, 0, 131072, 2228223, 0, 131074, 2162706, 0, 65536, 2162707, 0, 131074, 2293669, 0, 0, 2293720, 0, 0, 2293738, 0, 131072, 2293739, 0, 131073, 2293740, 0, 0, 2293741, 0, 1, 2293742, 0, 1, 2293743, 0, 1, 2293744, 0, 1, 2293745, 0, 1, 2293746, 0, 2, 2293757, 0, 0, 2293758, 0, 0, 2293759, 0, 65538, 2228242, 0, 131072, 2228243, 0, 65538, 2359205, 0, 0, 2359256, 0, 0, 2359274, 0, 131072, 2359275, 0, 131073, 2359276, 0, 65537, 2359277, 0, 131073, 2359278, 0, 65537, 2359279, 0, 131073, 2359280, 0, 131073, 2359281, 0, 65537, 2359282, 0, 0, 2359283, 0, 1, 2359284, 0, 2, 2359292, 0, 0, 2359293, 0, 0, 2359294, 0, 131073, 2359295, 0, 65538, 2293778, 0, 0, 2293779, 0, 0, 2424741, 0, 0, 2424792, 0, 0, 2424810, 0, 65536, 2424811, 0, 131073, 2424812, 0, 65537, 2424813, 0, 65537, 2424814, 0, 65537, 2424815, 0, 65537, 2424816, 0, 65537, 2424817, 0, 65537, 2424818, 0, 131073, 2424819, 0, 65537, 2424820, 0, 0, 2424821, 0, 2, 2424828, 0, 65536, 2424829, 0, 65537, 2424830, 0, 0, 2424831, 0, 0, 2490277, 0, 0, 2490328, 0, 0, 2490346, 0, 131072, 2490347, 0, 131073, 2490348, 0, 65537, 2490349, 0, 65537, 2490350, 0, 65537, 2490351, 0, 65537, 2490352, 0, 65537, 2490353, 0, 131073, 2490354, 0, 131073, 2490355, 0, 131073, 2490356, 0, 131073, 2490357, 0, 0, 2490358, 0, 1, 2490359, 0, 1, 2490360, 0, 1, 2490361, 0, 1, 2490362, 0, 1, 2490363, 0, 1, 2490364, 0, 0, 2490365, 0, 65537, 2490366, 0, 65538, 2555813, 0, 0, 2555864, 0, 0, 2555882, 0, 65536, 2555883, 0, 65537, 2555884, 0, 131073, 2555885, 0, 131073, 2555886, 0, 131073, 2555887, 0, 65537, 2555888, 0, 131073, 2555889, 0, 131073, 2555890, 0, 65537, 2555891, 0, 131073, 2555892, 0, 65537, 2555893, 0, 131073, 2555894, 0, 131073, 2555895, 0, 131073, 2555896, 0, 131073, 2555897, 0, 65537, 2555898, 0, 65537, 2555899, 0, 131073, 2555900, 0, 131073, 2555901, 0, 131073, 2555902, 0, 65538, 2621349, 0, 0, 2621400, 0, 0, 2621418, 0, 0, 2621419, 0, 0, 2621420, 0, 0, 2621421, 0, 0, 2621422, 0, 0, 2621423, 0, 0, 2621424, 0, 0, 2621425, 0, 0, 2621426, 0, 0, 2621427, 0, 0, 2621428, 0, 0, 2621429, 0, 0, 2621430, 0, 0, 2621431, 0, 0, 2621432, 0, 0, 2621433, 0, 0, 2621434, 0, 0, 2621435, 0, 0, 2621436, 0, 0, 2621437, 0, 0, 2621438, 0, 0, 2686885, 0, 0, 2686936, 0, 0, 2752421, 0, 0, 2752472, 0, 0, 2817957, 0, 0, 2818008, 0, 0, 2883493, 0, 0, 2883544, 0, 0, 2949029, 0, 0, 2949080, 0, 0, 3014565, 0, 0, 3014616, 0, 0, 3080101, 0, 0, 3080152, 0, 0, 3145688, 0, 0, 3211224, 0, 0, 3276760, 0, 0, 3342296, 0, 0, 3407832, 0, 0, 3473368, 0, 0, 3538904, 0, 0, 3604440, 0, 0, 3669925, 0, 0, 3669976, 0, 0, 3735461, 0, 0, 3735512, 0, 0, 3800997, 0, 0, 3800998, 0, 0, 3800999, 0, 0, 3801000, 0, 0, 3801001, 0, 0, 3801002, 0, 0, 3801003, 0, 0, 3801004, 0, 0, 3801005, 0, 0, 3801006, 0, 0, 3801007, 0, 0, 3801008, 0, 0, 3801009, 0, 0, 3801010, 0, 0, 3801011, 0, 0, 3801012, 0, 0, 3801013, 0, 0, 3801014, 0, 0, 3801024, 0, 0, 3801025, 0, 0, 3801026, 0, 0, 3801027, 0, 0, 3801028, 0, 0, 3801029, 0, 0, 3801030, 0, 0, 3801031, 0, 0, 3801032, 0, 0, 3801033, 0, 0, 3801034, 0, 0, 3801035, 0, 0, 3801036, 0, 0, 3801037, 0, 0, 3801038, 0, 0, 3801039, 0, 0, 3801040, 0, 0, 3801041, 0, 0, 3801042, 0, 0, 3801043, 0, 0, 3801044, 0, 0, 3801045, 0, 0, 3801046, 0, 0, 3801047, 0, 0, 3801048, 0, 0 )
+tile_data = PoolIntArray( -196673, 0, 0, -65627, 0, 0, -65626, 0, 0, -65625, 0, 0, -65624, 0, 0, -65623, 0, 0, -65622, 0, 0, -65621, 0, 0, -65620, 0, 0, -65619, 0, 0, -65618, 0, 0, -65617, 0, 0, -65616, 0, 0, -65615, 0, 0, -65614, 0, 0, -65613, 0, 0, -65612, 0, 0, -65611, 0, 0, -65610, 0, 0, -65609, 0, 0, -65608, 0, 0, -65607, 0, 0, -65606, 0, 0, -65605, 0, 0, -65604, 0, 0, -65603, 0, 0, -65598, 0, 0, -65597, 0, 0, -65596, 0, 0, -65595, 0, 0, -65594, 0, 0, -65593, 0, 0, -65592, 0, 0, -65591, 0, 0, -65590, 0, 0, -65589, 0, 0, -65588, 0, 0, -65587, 0, 0, -65586, 0, 0, -65585, 0, 0, -65584, 0, 0, -65583, 0, 0, -65582, 0, 0, -65581, 0, 0, -65580, 0, 0, -65579, 0, 0, -65578, 0, 0, -65577, 0, 0, -65576, 0, 0, -91, 0, 0, -40, 0, 0, 65445, 0, 0, 65496, 0, 0, 130981, 0, 0, 131032, 0, 0, 196517, 0, 0, 196568, 0, 0, 262053, 0, 0, 262104, 0, 0, 327589, 0, 0, 327640, 0, 0, 393125, 0, 0, 393176, 0, 0, 327699, 0, 0, 458661, 0, 0, 458712, 0, 0, 458730, 0, 0, 458731, 0, 1, 458732, 0, 1, 458733, 0, 1, 458734, 0, 1, 458735, 0, 1, 458736, 0, 1, 458737, 0, 1, 458738, 0, 1, 458739, 0, 1, 458740, 0, 1, 458741, 0, 1, 458742, 0, 1, 458743, 0, 1, 458744, 0, 1, 458745, 0, 1, 458746, 0, 1, 458747, 0, 1, 458748, 0, 1, 458749, 0, 1, 458750, 0, 1, 458751, 0, 2, 393235, 0, 0, 524197, 0, 0, 524248, 0, 0, 524266, 0, 131072, 524267, 0, 131073, 524268, 0, 65537, 524269, 0, 65537, 524270, 0, 65537, 524271, 0, 0, 524272, 0, 0, 524273, 0, 0, 524274, 0, 0, 524275, 0, 0, 524276, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 131073, 524285, 0, 131073, 524286, 0, 131073, 524287, 0, 131074, 458771, 0, 0, 589733, 0, 0, 589784, 0, 0, 589802, 0, 65536, 589803, 0, 65537, 589804, 0, 0, 589805, 0, 0, 589806, 0, 0, 589807, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 65537, 589823, 0, 65538, 524307, 0, 0, 655269, 0, 0, 655320, 0, 0, 655338, 0, 131072, 655339, 0, 131073, 655340, 0, 131074, 655357, 0, 131072, 655358, 0, 131073, 655359, 0, 131074, 589843, 0, 0, 720805, 0, 0, 720856, 0, 0, 720874, 0, 65536, 720875, 0, 65537, 720876, 0, 131074, 720893, 0, 0, 720894, 0, 0, 720895, 0, 131074, 655379, 0, 0, 786341, 0, 0, 786392, 0, 0, 786410, 0, 0, 786411, 0, 0, 786412, 0, 0, 786413, 0, 0, 786430, 0, 0, 786431, 0, 0, 720915, 0, 0, 851877, 0, 0, 851928, 0, 0, 851946, 0, 0, 851967, 0, 0, 786451, 0, 0, 917413, 0, 0, 917464, 0, 0, 917482, 0, 0, 917503, 0, 0, 851987, 0, 0, 982949, 0, 0, 983000, 0, 0, 983018, 0, 0, 983039, 0, 0, 917523, 0, 0, 1048485, 0, 0, 1048536, 0, 0, 1048554, 0, 0, 1048575, 0, 0, 983059, 0, 0, 1114021, 0, 0, 1114072, 0, 0, 1114090, 0, 0, 1048595, 0, 0, 1179608, 0, 0, 1179626, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1245144, 0, 0, 1245145, 0, 0, 1245146, 0, 0, 1245147, 0, 0, 1245148, 0, 0, 1245149, 0, 0, 1245150, 0, 0, 1245151, 0, 0, 1245152, 0, 0, 1245153, 0, 0, 1245154, 0, 0, 1245155, 0, 0, 1245156, 0, 0, 1245157, 0, 0, 1245158, 0, 0, 1245159, 0, 0, 1245160, 0, 0, 1245161, 0, 0, 1245162, 0, 0, 1572864, 0, 0, 1572865, 0, 1, 1572866, 0, 1, 1572867, 0, 1, 1572868, 0, 1, 1572869, 0, 1, 1572870, 0, 1, 1572871, 0, 1, 1572872, 0, 1, 1572873, 0, 1, 1572874, 0, 1, 1572875, 0, 1, 1572876, 0, 1, 1572877, 0, 1, 1572878, 0, 1, 1572879, 0, 1, 1572880, 0, 1, 1572881, 0, 1, 1572882, 0, 1, 1572883, 0, 2, 1703896, 0, 0, 1703897, 0, 1, 1703898, 0, 1, 1703899, 0, 1, 1703900, 0, 1, 1703901, 0, 1, 1703902, 0, 1, 1703903, 0, 1, 1703904, 0, 1, 1703905, 0, 1, 1703906, 0, 1, 1703907, 0, 1, 1703908, 0, 1, 1703909, 0, 1, 1703910, 0, 1, 1703911, 0, 1, 1703912, 0, 1, 1703913, 0, 2, 1638400, 0, 65536, 1638401, 0, 65537, 1638402, 0, 65537, 1638403, 0, 131073, 1638404, 0, 65537, 1638405, 0, 65537, 1638406, 0, 65537, 1638407, 0, 65537, 1638408, 0, 65537, 1638409, 0, 131073, 1638410, 0, 65537, 1638411, 0, 131073, 1638412, 0, 131073, 1638413, 0, 65537, 1638414, 0, 65537, 1638415, 0, 131073, 1638416, 0, 131073, 1638417, 0, 131073, 1638418, 0, 131073, 1638419, 0, 65538, 1769432, 0, 131072, 1769433, 0, 65537, 1769434, 0, 65537, 1769435, 0, 65537, 1769436, 0, 131073, 1769437, 0, 131073, 1769438, 0, 131073, 1769439, 0, 131073, 1769440, 0, 65537, 1769441, 0, 65537, 1769442, 0, 65537, 1769443, 0, 131073, 1769444, 0, 131073, 1769445, 0, 65537, 1769446, 0, 65537, 1769447, 0, 131073, 1769448, 0, 131073, 1769449, 0, 131074, 1703936, 0, 131072, 1703937, 0, 65537, 1703938, 0, 131073, 1703939, 0, 131073, 1703940, 0, 131073, 1703941, 0, 131073, 1703942, 0, 65537, 1703943, 0, 131073, 1703944, 0, 131073, 1703945, 0, 65537, 1703946, 0, 131073, 1703947, 0, 131073, 1703948, 0, 65537, 1703949, 0, 65537, 1703950, 0, 131073, 1703951, 0, 65537, 1703952, 0, 131073, 1703953, 0, 65537, 1703954, 0, 131073, 1703955, 0, 131074, 1834968, 0, 131072, 1834969, 0, 65537, 1834970, 0, 131073, 1834971, 0, 131073, 1834972, 0, 65537, 1834973, 0, 65537, 1834974, 0, 131073, 1834975, 0, 131073, 1834976, 0, 65537, 1834977, 0, 65537, 1834978, 0, 65537, 1834979, 0, 65537, 1834980, 0, 131073, 1834981, 0, 131073, 1834982, 0, 65537, 1834983, 0, 65537, 1834984, 0, 131073, 1834985, 0, 65538, 1769472, 0, 0, 1769473, 0, 0, 1769474, 0, 0, 1769475, 0, 0, 1769476, 0, 0, 1769477, 0, 0, 1769478, 0, 0, 1769479, 0, 0, 1769480, 0, 0, 1769481, 0, 0, 1769482, 0, 0, 1769483, 0, 0, 1769484, 0, 0, 1769485, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1769489, 0, 0, 1769490, 0, 0, 1769491, 0, 131074, 1900504, 0, 65536, 1900505, 0, 131073, 1900506, 0, 65537, 1900507, 0, 65537, 1900508, 0, 131073, 1900509, 0, 131073, 1900510, 0, 131073, 1900511, 0, 65537, 1900512, 0, 131073, 1900513, 0, 131073, 1900514, 0, 131073, 1900515, 0, 65537, 1900516, 0, 65537, 1900517, 0, 65537, 1900518, 0, 131073, 1900519, 0, 131073, 1900520, 0, 65537, 1900521, 0, 65538, 1835026, 0, 65536, 1835027, 0, 131074, 1966040, 0, 0, 1966041, 0, 0, 1966042, 0, 0, 1966043, 0, 0, 1966044, 0, 0, 1966045, 0, 0, 1966046, 0, 0, 1966047, 0, 0, 1966048, 0, 0, 1966049, 0, 0, 1966050, 0, 0, 1966051, 0, 0, 1966052, 0, 0, 1966053, 0, 0, 1966054, 0, 0, 1966055, 0, 0, 1966056, 0, 0, 1966057, 0, 0, 1900562, 0, 131072, 1900563, 0, 65538, 2031576, 0, 0, 2031593, 0, 0, 2031594, 0, 0, 2031595, 0, 1, 2031596, 0, 2, 2031615, 0, 0, 1966098, 0, 65536, 1966099, 0, 65538, 2097112, 0, 0, 2097130, 0, 131072, 2097131, 0, 65537, 2097132, 0, 65538, 2097150, 0, 0, 2097151, 0, 0, 2031634, 0, 65536, 2031635, 0, 131074, 2162648, 0, 0, 2162666, 0, 131072, 2162667, 0, 65537, 2162668, 0, 65538, 2162686, 0, 65536, 2162687, 0, 65538, 2097170, 0, 65536, 2097171, 0, 65538, 2228184, 0, 0, 2228202, 0, 131072, 2228203, 0, 65537, 2228204, 0, 65538, 2228222, 0, 131072, 2228223, 0, 131074, 2162706, 0, 65536, 2162707, 0, 131074, 2293669, 0, 0, 2293720, 0, 0, 2293738, 0, 131072, 2293739, 0, 131073, 2293740, 0, 0, 2293741, 0, 1, 2293742, 0, 1, 2293743, 0, 1, 2293744, 0, 1, 2293745, 0, 1, 2293746, 0, 2, 2293757, 0, 0, 2293758, 0, 0, 2293759, 0, 65538, 2228242, 0, 131072, 2228243, 0, 65538, 2359205, 0, 0, 2359256, 0, 0, 2359274, 0, 131072, 2359275, 0, 131073, 2359276, 0, 65537, 2359277, 0, 131073, 2359278, 0, 65537, 2359279, 0, 131073, 2359280, 0, 131073, 2359281, 0, 65537, 2359282, 0, 0, 2359283, 0, 1, 2359284, 0, 2, 2359292, 0, 0, 2359293, 0, 0, 2359294, 0, 131073, 2359295, 0, 65538, 2293778, 0, 0, 2293779, 0, 0, 2424741, 0, 0, 2424792, 0, 0, 2424810, 0, 65536, 2424811, 0, 131073, 2424812, 0, 65537, 2424813, 0, 65537, 2424814, 0, 65537, 2424815, 0, 65537, 2424816, 0, 65537, 2424817, 0, 65537, 2424818, 0, 131073, 2424819, 0, 65537, 2424820, 0, 0, 2424821, 0, 2, 2424828, 0, 65536, 2424829, 0, 65537, 2424830, 0, 0, 2424831, 0, 0, 2490277, 0, 0, 2490328, 0, 0, 2490346, 0, 131072, 2490347, 0, 131073, 2490348, 0, 65537, 2490349, 0, 65537, 2490350, 0, 65537, 2490351, 0, 65537, 2490352, 0, 65537, 2490353, 0, 131073, 2490354, 0, 131073, 2490355, 0, 131073, 2490356, 0, 131073, 2490357, 0, 0, 2490358, 0, 1, 2490359, 0, 1, 2490360, 0, 1, 2490361, 0, 1, 2490362, 0, 1, 2490363, 0, 1, 2490364, 0, 0, 2490365, 0, 65537, 2490366, 0, 65538, 2555813, 0, 0, 2555864, 0, 0, 2555882, 0, 65536, 2555883, 0, 65537, 2555884, 0, 131073, 2555885, 0, 131073, 2555886, 0, 131073, 2555887, 0, 65537, 2555888, 0, 131073, 2555889, 0, 131073, 2555890, 0, 65537, 2555891, 0, 131073, 2555892, 0, 65537, 2555893, 0, 131073, 2555894, 0, 131073, 2555895, 0, 131073, 2555896, 0, 131073, 2555897, 0, 65537, 2555898, 0, 65537, 2555899, 0, 131073, 2555900, 0, 131073, 2555901, 0, 131073, 2555902, 0, 65538, 2621349, 0, 0, 2621400, 0, 0, 2621418, 0, 0, 2621419, 0, 0, 2621420, 0, 0, 2621421, 0, 0, 2621422, 0, 0, 2621423, 0, 0, 2621424, 0, 0, 2621425, 0, 0, 2621426, 0, 0, 2621427, 0, 0, 2621428, 0, 0, 2621429, 0, 0, 2621430, 0, 0, 2621431, 0, 0, 2621432, 0, 0, 2621433, 0, 0, 2621434, 0, 0, 2621435, 0, 0, 2621436, 0, 0, 2621437, 0, 0, 2621438, 0, 0, 2686885, 0, 0, 2686936, 0, 0, 2752421, 0, 0, 2752472, 0, 0, 2817957, 0, 0, 2818008, 0, 0, 2883493, 0, 0, 2883544, 0, 0, 2949029, 0, 0, 2949080, 0, 0, 3014565, 0, 0, 3014616, 0, 0, 3080101, 0, 0, 3080152, 0, 0, 3145688, 0, 0, 3211224, 0, 0, 3276760, 0, 0, 3342296, 0, 0, 3407832, 0, 0, 3473368, 0, 0, 3538904, 0, 0, 3604440, 0, 0, 3669925, 0, 0, 3669976, 0, 0, 3735461, 0, 0, 3735512, 0, 0, 3800997, 0, 0, 3800998, 0, 0, 3800999, 0, 0, 3801000, 0, 0, 3801001, 0, 0, 3801002, 0, 0, 3801003, 0, 0, 3801004, 0, 0, 3801005, 0, 0, 3801006, 0, 0, 3801007, 0, 0, 3801008, 0, 0, 3801009, 0, 0, 3801010, 0, 0, 3801011, 0, 0, 3801012, 0, 0, 3801013, 0, 0, 3801014, 0, 0, 3801024, 0, 0, 3801025, 0, 0, 3801026, 0, 0, 3801027, 0, 0, 3801028, 0, 0, 3801029, 0, 0, 3801030, 0, 0, 3801031, 0, 0, 3801032, 0, 0, 3801033, 0, 0, 3801034, 0, 0, 3801035, 0, 0, 3801036, 0, 0, 3801037, 0, 0, 3801038, 0, 0, 3801039, 0, 0, 3801040, 0, 0, 3801041, 0, 0, 3801042, 0, 0, 3801043, 0, 0, 3801044, 0, 0, 3801045, 0, 0, 3801046, 0, 0, 3801047, 0, 0, 3801048, 0, 0 )
 
 [node name="Waterfall2" type="TileMap" parent="Tilemaps"]
 tile_set = SubResource( 17 )
@@ -896,7 +947,7 @@ position = Vector2( -0.646179, 0.646164 )
 shape = SubResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TreeLog3"]
-position = Vector2( -417.962, 532.554 )
+position = Vector2( -108.912, 715.763 )
 shape = SubResource( 20 )
 
 [node name="TreeStump4" type="KinematicBody2D" parent="."]
@@ -1029,151 +1080,6 @@ collision_layer = 2
 position = Vector2( -253.742, -83.9424 )
 shape = SubResource( 69 )
 
-[node name="CutsceneOne" type="Area2D" parent="."]
-position = Vector2( 810.268, 334.722 )
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 17 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CutsceneOne"]
-position = Vector2( 1.37921, -4.30872 )
-shape = SubResource( 70 )
-
-[node name="Control" type="Control" parent="CutsceneOne"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DialogBox1" type="Control" parent="CutsceneOne/Control"]
-anchor_left = -4.543
-anchor_top = 7.0
-anchor_right = -4.543
-anchor_bottom = 7.025
-margin_left = 181.72
-margin_top = -280.0
-margin_right = 221.72
-margin_bottom = -241.0
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="CutsceneOne/Control/DialogBox1"]
-anchor_left = 1.844
-anchor_top = 7.314
-anchor_right = 1.844
-anchor_bottom = 7.341
-margin_left = -282.498
-margin_top = -139.507
-margin_right = 282.502
-margin_bottom = -33.5875
-texture = ExtResource( 32 )
-expand = true
-stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CutsceneOne/Control/DialogBox1"]
-anchor_left = -4.942
-anchor_top = 4.005
-anchor_right = 8.858
-anchor_bottom = 6.48
-margin_left = -0.00540161
-margin_top = 0.0104065
-margin_right = -0.00546265
-margin_bottom = 0.0104065
-custom_fonts/normal_font = SubResource( 71 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "Alvarius: Where... where am I?"
-text = "Alvarius: Where... where am I?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="CutsceneOne/Control/DialogBox1"]
-position = Vector2( 66.4998, 210.999 )
-scale = Vector2( 0.54902, 0.568629 )
-texture = ExtResource( 33 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneOne/Control/DialogBox1/Sprite"]
-autoplay = "Schmovin"
-anims/Schmovin = SubResource( 72 )
-
-[node name="Tween" type="Tween" parent="CutsceneOne/Control/DialogBox1"]
-
-[node name="Cutscene Two" type="Area2D" parent="."]
-position = Vector2( -239.407, 346.219 )
-collision_layer = 3
-collision_mask = 3
-script = ExtResource( 16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene Two"]
-position = Vector2( 11.7365, -1.33176 )
-shape = SubResource( 73 )
-
-[node name="Control" type="Control" parent="Cutscene Two"]
-margin_left = 1.0
-margin_right = 44.0
-margin_bottom = 44.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DialogBox" type="Control" parent="Cutscene Two/Control"]
-visible = false
-margin_left = 26.5366
-margin_top = 39.1065
-margin_right = 66.5366
-margin_bottom = 79.1065
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Cutscene Two/Control/DialogBox"]
-anchor_left = 2.158
-anchor_top = 7.625
-anchor_right = 2.158
-anchor_bottom = 7.625
-margin_left = -309.091
-margin_top = -196.0
-margin_right = 303.909
-margin_bottom = -64.0001
-texture = ExtResource( 32 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Cutscene Two/Control/DialogBox"]
-anchor_left = -5.46
-anchor_top = 3.134
-anchor_right = 9.789
-anchor_bottom = 6.3
-margin_left = 8.81534
-margin_top = -5.40645
-margin_right = -9.14465
-margin_bottom = -16.0464
-custom_fonts/normal_font = SubResource( 74 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_text = "I have perhaps bitten off more than I can chew..."
-text = "I have perhaps bitten off more than I can chew..."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="Cutscene Two/Control/DialogBox"]
-
-[node name="Sprite" type="Sprite" parent="Cutscene Two/Control/DialogBox"]
-visible = false
-position = Vector2( 353.705, 203.207 )
-scale = Vector2( 0.54388, 0.67058 )
-texture = ExtResource( 33 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cutscene Two/Control/DialogBox/Sprite"]
-autoplay = "Schmovin"
-anims/Schmovin = SubResource( 75 )
-
 [node name="FruitShack" type="Sprite" parent="."]
 position = Vector2( -931.383, 224.241 )
 scale = Vector2( 1.94234, 1.71492 )
@@ -1186,7 +1092,7 @@ texture = ExtResource( 31 )
 [node name="StaticBody2D" type="StaticBody2D" parent="FruitShack"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FruitShack/StaticBody2D"]
-shape = SubResource( 76 )
+shape = SubResource( 70 )
 
 [node name="HouseFront" type="Sprite" parent="."]
 position = Vector2( -1180.81, 225.533 )
@@ -1196,22 +1102,22 @@ texture = ExtResource( 37 )
 [node name="StaticBody2D" type="StaticBody2D" parent="HouseFront"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFront/StaticBody2D"]
-shape = SubResource( 77 )
+shape = SubResource( 71 )
 
 [node name="HouseBack" type="Sprite" parent="."]
-position = Vector2( -948.327, 580.538 )
+position = Vector2( -1016.8, 554.63 )
 scale = Vector2( 1.94234, 1.71492 )
 texture = ExtResource( 36 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="HouseBack"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBack/StaticBody2D"]
-shape = SubResource( 78 )
+shape = SubResource( 72 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1039.47, 386.034 )
 scale = Vector2( 1.94234, 1.71492 )
-frames = SubResource( 82 )
+frames = SubResource( 76 )
 frame = 2
 playing = true
 
@@ -1220,10 +1126,10 @@ position = Vector2( -72.7659, -93.5909 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/StaticBody2D"]
 position = Vector2( 73.0895, 91.5473 )
-shape = SubResource( 83 )
+shape = SubResource( 77 )
 
 [node name="Coffin1" type="KinematicBody2D" parent="."]
-position = Vector2( -1.42621, -1.98236 )
+position = Vector2( 0.424376, -1.98236 )
 script = ExtResource( 9 )
 
 [node name="Coffin" type="Sprite" parent="Coffin1"]
@@ -1235,7 +1141,7 @@ texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin1/Coffin/StaticBody2D"]
 position = Vector2( -0.510803, 1.01312 )
-shape = SubResource( 84 )
+shape = SubResource( 78 )
 
 [node name="Area2D" type="Area2D" parent="Coffin1"]
 position = Vector2( -1353.9, 633.869 )
@@ -1243,11 +1149,11 @@ script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin1/Area2D"]
 position = Vector2( -9.69653, 27.6866 )
-shape = SubResource( 85 )
+shape = SubResource( 79 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin1"]
-position = Vector2( 3.79993, 36.0997 )
-shape = SubResource( 86 )
+position = Vector2( 57.652, 61.3055 )
+shape = SubResource( 80 )
 
 [node name="Coffin2" type="KinematicBody2D" parent="."]
 position = Vector2( -1269.46, 664.205 )
@@ -1259,7 +1165,7 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin2/Area2D2"]
 position = Vector2( -7.23901, 3.37097 )
-shape = SubResource( 85 )
+shape = SubResource( 79 )
 
 [node name="Coffin2" type="Sprite" parent="Coffin2"]
 position = Vector2( 7.48132, 0.878479 )
@@ -1270,11 +1176,11 @@ texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin2/Coffin2/StaticBody2D"]
 position = Vector2( -1.9209, 0.663361 )
-shape = SubResource( 87 )
+shape = SubResource( 81 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin2"]
 position = Vector2( -295.971, 391.426 )
-shape = SubResource( 88 )
+shape = SubResource( 82 )
 
 [node name="Coffin 3" type="KinematicBody2D" parent="."]
 position = Vector2( -1356.49, 799.461 )
@@ -1291,18 +1197,18 @@ scale = Vector2( 0.548954, 0.568685 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin 3/Coffin3/StaticBody2D"]
 position = Vector2( -4.28687, 6.85889 )
-shape = SubResource( 89 )
+shape = SubResource( 83 )
 
 [node name="Area2D" type="Area2D" parent="Coffin 3"]
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin 3/Area2D"]
 position = Vector2( -5.26318, 6.31573 )
-shape = SubResource( 90 )
+shape = SubResource( 84 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin 3"]
 position = Vector2( -267.893, 235.027 )
-shape = SubResource( 91 )
+shape = SubResource( 85 )
 
 [node name="Coffin 4" type="KinematicBody2D" parent="."]
 position = Vector2( -1281.32, 812.733 )
@@ -1316,22 +1222,315 @@ texture = ExtResource( 24 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Coffin 4/Coffin4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin 4/Coffin4/StaticBody2D"]
-shape = SubResource( 92 )
+shape = SubResource( 86 )
 
 [node name="Area2D" type="Area2D" parent="Coffin 4"]
 script = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin 4/Area2D"]
-shape = SubResource( 93 )
+shape = SubResource( 87 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coffin 4"]
 position = Vector2( -201.536, 209.738 )
+shape = SubResource( 88 )
+
+[node name="Cutscenes" type="YSort" parent="."]
+position = Vector2( 72.1733, 566.283 )
+
+[node name="CutsceneThree" type="Area2D" parent="Cutscenes"]
+position = Vector2( -762.369, -220.392 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 49 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneThree"]
+position = Vector2( 6.96399, 6.96393 )
+shape = SubResource( 89 )
+
+[node name="Control" type="Control" parent="Cutscenes/CutsceneThree"]
+margin_left = 221.629
+margin_top = 289.581
+margin_right = 299.629
+margin_bottom = 416.581
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="Control" parent="Cutscenes/CutsceneThree/Control"]
+visible = false
+anchor_left = -1.602
+margin_left = -304.472
+margin_top = -142.758
+margin_right = 179.572
+margin_bottom = -13.7579
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Cutscenes/CutsceneThree/Control/DialogBox"]
+position = Vector2( 552.221, 100.872 )
+scale = Vector2( 0.54388, 0.67058 )
+texture = ExtResource( 33 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cutscenes/CutsceneThree/Control/DialogBox/Sprite"]
+autoplay = "Schmovin"
+anims/Schmovin = SubResource( 90 )
+
+[node name="TextureRect" type="TextureRect" parent="Cutscenes/CutsceneThree/Control/DialogBox"]
+anchor_left = 0.456
+anchor_top = 1.49
+anchor_right = 0.456
+anchor_bottom = 1.49
+margin_left = -304.416
+margin_top = -195.915
+margin_right = 304.584
+margin_bottom = -64.9154
+texture = ExtResource( 32 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscenes/CutsceneThree/Control/DialogBox"]
+anchor_left = -0.021
+anchor_top = 0.016
+anchor_right = 0.943
+anchor_bottom = 0.922
+margin_left = -9.00134
+margin_top = -0.0640001
+margin_right = -9.07733
+margin_bottom = 6.062
+custom_fonts/normal_font = SubResource( 91 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "Alvarius: Woah..."
+text = "Alvarius: Woah..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Cutscenes/CutsceneThree/Control/DialogBox"]
+
+[node name="CutsceneFour" type="Area2D" parent="Cutscenes"]
+position = Vector2( -1046.96, -188.901 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneFour"]
+position = Vector2( 6.96399, 6.96393 )
+shape = SubResource( 92 )
+
+[node name="Control" type="Control" parent="Cutscenes/CutsceneFour"]
+margin_left = 221.629
+margin_top = 289.581
+margin_right = 299.629
+margin_bottom = 416.581
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox2" type="Control" parent="Cutscenes/CutsceneFour/Control"]
+visible = false
+anchor_left = -1.602
+margin_left = -304.472
+margin_top = -142.758
+margin_right = 179.572
+margin_bottom = -13.7579
+script = ExtResource( 52 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Cutscenes/CutsceneFour/Control/DialogBox2"]
+position = Vector2( 552.221, 100.872 )
+scale = Vector2( 0.54388, 0.67058 )
+texture = ExtResource( 33 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cutscenes/CutsceneFour/Control/DialogBox2/Sprite"]
+autoplay = "Schmovin"
+anims/Schmovin = SubResource( 93 )
+
+[node name="TextureRect" type="TextureRect" parent="Cutscenes/CutsceneFour/Control/DialogBox2"]
+anchor_left = 0.456
+anchor_top = 1.49
+anchor_right = 0.456
+anchor_bottom = 1.49
+margin_left = -304.416
+margin_top = -195.915
+margin_right = 304.584
+margin_bottom = -64.9154
+texture = ExtResource( 32 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscenes/CutsceneFour/Control/DialogBox2"]
+anchor_left = -0.021
+anchor_top = 0.016
+anchor_right = 0.943
+anchor_bottom = 0.922
+margin_left = -9.00134
+margin_top = -0.0640001
+margin_right = -9.07733
+margin_bottom = 6.062
+custom_fonts/normal_font = SubResource( 91 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "Alvarius: Woah..."
+text = "Alvarius: Woah..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Cutscenes/CutsceneFour/Control/DialogBox2"]
+
+[node name="Key" type="Sprite" parent="Cutscenes/CutsceneFour"]
+position = Vector2( 5.92017, 7.95877 )
+scale = Vector2( 0.974483, 1.05529 )
+texture = ExtResource( 51 )
+
+[node name="CutsceneOne" type="Area2D" parent="Cutscenes"]
+position = Vector2( 738.095, -231.561 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneOne"]
+position = Vector2( 1.37921, -4.30872 )
 shape = SubResource( 94 )
+
+[node name="Control" type="Control" parent="Cutscenes/CutsceneOne"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox1" type="Control" parent="Cutscenes/CutsceneOne/Control"]
+anchor_left = -4.543
+anchor_top = 7.0
+anchor_right = -4.543
+anchor_bottom = 7.025
+margin_left = 181.72
+margin_top = -280.0
+margin_right = 221.72
+margin_bottom = -241.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Cutscenes/CutsceneOne/Control/DialogBox1"]
+anchor_left = 1.844
+anchor_top = 7.314
+anchor_right = 1.844
+anchor_bottom = 7.341
+margin_left = -282.498
+margin_top = -139.507
+margin_right = 282.502
+margin_bottom = -33.5875
+texture = ExtResource( 32 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscenes/CutsceneOne/Control/DialogBox1"]
+anchor_left = -4.942
+anchor_top = 4.005
+anchor_right = 8.858
+anchor_bottom = 6.48
+margin_left = -0.00540161
+margin_top = 0.0104065
+margin_right = -0.00546265
+margin_bottom = 0.0104065
+custom_fonts/normal_font = SubResource( 95 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Alvarius: Where... where am I?"
+text = "Alvarius: Where... where am I?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Cutscenes/CutsceneOne/Control/DialogBox1"]
+position = Vector2( 66.4998, 210.999 )
+scale = Vector2( 0.54902, 0.568629 )
+texture = ExtResource( 33 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneOne/Control/DialogBox1/Sprite"]
+autoplay = "Schmovin"
+anims/Schmovin = SubResource( 96 )
+
+[node name="Tween" type="Tween" parent="Cutscenes/CutsceneOne/Control/DialogBox1"]
+
+[node name="Cutscene Two" type="Area2D" parent="Cutscenes"]
+position = Vector2( -314.753, -213.717 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/Cutscene Two"]
+position = Vector2( 12.0955, -1.69068 )
+shape = SubResource( 97 )
+
+[node name="Control" type="Control" parent="Cutscenes/Cutscene Two"]
+margin_left = 1.0
+margin_right = 44.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="Control" parent="Cutscenes/Cutscene Two/Control"]
+visible = false
+margin_left = 26.5366
+margin_top = 39.1065
+margin_right = 66.5366
+margin_bottom = 79.1065
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Cutscenes/Cutscene Two/Control/DialogBox"]
+anchor_left = 2.158
+anchor_top = 7.625
+anchor_right = 2.158
+anchor_bottom = 7.625
+margin_left = -309.091
+margin_top = -196.0
+margin_right = 303.909
+margin_bottom = -64.0001
+texture = ExtResource( 32 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscenes/Cutscene Two/Control/DialogBox"]
+anchor_left = -5.46
+anchor_top = 3.134
+anchor_right = 9.789
+anchor_bottom = 6.3
+margin_left = 8.81534
+margin_top = -5.40645
+margin_right = -9.14465
+margin_bottom = -16.0464
+custom_fonts/normal_font = SubResource( 98 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "I have perhaps bitten off more than I can chew..."
+text = "I have perhaps bitten off more than I can chew..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Cutscenes/Cutscene Two/Control/DialogBox"]
+
+[node name="Sprite" type="Sprite" parent="Cutscenes/Cutscene Two/Control/DialogBox"]
+visible = false
+position = Vector2( 353.705, 203.207 )
+scale = Vector2( 0.54388, 0.67058 )
+texture = ExtResource( 33 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cutscenes/Cutscene Two/Control/DialogBox/Sprite"]
+autoplay = "Schmovin"
+anims/Schmovin = SubResource( 99 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 810.631, 326.936 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
@@ -1344,14 +1543,14 @@ frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0.334015, 3.38305 )
-shape = SubResource( 95 )
+shape = SubResource( 100 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-anims/WhenYouDyin = SubResource( 100 )
-anims/WhenYouStandinLeft = SubResource( 96 )
-anims/WhenYouStandinRight = SubResource( 97 )
-anims/WhenYouWalkin = SubResource( 98 )
-anims/WhenYouWalkinLeft = SubResource( 99 )
+anims/WhenYouDyin = SubResource( 101 )
+anims/WhenYouStandinLeft = SubResource( 102 )
+anims/WhenYouStandinRight = SubResource( 103 )
+anims/WhenYouWalkin = SubResource( 104 )
+anims/WhenYouWalkinLeft = SubResource( 105 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -1394,33 +1593,63 @@ texture = ExtResource( 34 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 2212, 972 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( -1025.64, -33.8341 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/StaticBody2D"]
+position = Vector2( 6.63416, -18.5756 )
+shape = SubResource( 106 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 7.29773, -17.2488 )
+scale = Vector2( 1.26951, 1.41011 )
+texture = ExtResource( 53 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 476.131, -160.984 )
+shape = SubResource( 107 )
 [connection signal="body_entered" from="cliff/Cliff1" to="cliff/Cliff1" method="_on_Cliff1_body_entered"]
-[connection signal="body_entered" from="cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="cliff/Cliff1" to="Player" method="_on_Cliff1_body_entered"]
+[connection signal="body_entered" from="cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="cliff2/Cliff2" to="cliff2/Cliff2" method="_on_Cliff2_body_entered"]
-[connection signal="body_entered" from="cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="cliff2/Cliff2" to="Player" method="_on_Cliff2_body_entered"]
+[connection signal="body_entered" from="cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="cliff3/Cliff3" to="cliff3/Cliff3" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="cliff3/Cliff3" to="cliff3/Cliff3" method="_on_Cliff3_body_entered"]
-[connection signal="body_entered" from="cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="cliff3/Cliff3" to="Player" method="_on_Cliff3_body_entered"]
+[connection signal="body_entered" from="cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="cliff_fall" from="Skeleton" to="Skeleton" method="_on_Skeleton_cliff_fall"]
 [connection signal="body_entered" from="Skeleton/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="area_entered" from="CutsceneOne" to="CutsceneOne" method="_on_CutsceneOne_area_entered"]
-[connection signal="body_shape_entered" from="CutsceneOne" to="CutsceneOne" method="_on_CutsceneOne_body_shape_entered"]
-[connection signal="cutscene_ended" from="CutsceneOne" to="CutsceneOne" method="_on_CutsceneOne_cutscene_ended"]
-[connection signal="cutscene_started" from="CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
-[connection signal="cutscene_started" from="CutsceneOne" to="Player" method="_on_CutsceneOne_cutscene_started"]
-[connection signal="cutscene_ended" from="CutsceneOne/Control/DialogBox1" to="CutsceneOne" method="_on_DialogBox1_cutscene_ended"]
-[connection signal="cutscene_ended" from="CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
-[connection signal="cutscene_ended" from="CutsceneOne/Control/DialogBox1" to="Player" method="_on_DialogBox1_cutscene_ended"]
-[connection signal="area_entered" from="Cutscene Two" to="Cutscene Two" method="_on_Cutscene_Two_area_entered"]
-[connection signal="body_entered" from="Cutscene Two" to="Cutscene Two" method="_on_Cutscene_Two_body_entered"]
-[connection signal="cutscene_started" from="Cutscene Two" to="Cutscene Two/Control/DialogBox" method="_on_Cutscene_Two_cutscene_started"]
-[connection signal="cutscene_started" from="Cutscene Two" to="Player" method="_on_Cutscene_Two_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscene Two/Control/DialogBox" to="Cutscene Two" method="_on_DialogBox_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscene Two/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
-[connection signal="cutscene_started" from="Cutscene Two/Control/DialogBox" to="Cutscene Two/Control/DialogBox" method="_on_DialogBox_cutscene_started"]
+[connection signal="body_entered" from="Cutscenes/CutsceneThree" to="Cutscenes/CutsceneThree" method="_on_CutsceneThree_body_entered"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneThree" to="Cutscenes/CutsceneThree/Control/DialogBox" method="_on_CutsceneThree_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneThree" to="Player" method="_on_CutsceneThree_cutscene_started"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Cutscenes/CutsceneThree" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="body_entered" from="Cutscenes/CutsceneFour" to="Cutscenes/CutsceneFour" method="_on_CutsceneFour_body_entered"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneFour" to="Cutscenes/CutsceneFour/Control/DialogBox2" method="_on_CutsceneFour_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneFour" to="Player" method="_on_CutsceneFour_cutscene_started"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox2_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox2_cutscene_ended"]
+[connection signal="area_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_area_entered"]
+[connection signal="body_shape_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_body_shape_entered"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Player" method="_on_CutsceneOne_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Cutscenes/CutsceneOne" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Player" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="area_entered" from="Cutscenes/Cutscene Two" to="Cutscenes/Cutscene Two" method="_on_Cutscene_Two_area_entered"]
+[connection signal="body_entered" from="Cutscenes/Cutscene Two" to="Cutscenes/Cutscene Two" method="_on_Cutscene_Two_body_entered"]
+[connection signal="cutscene_started" from="Cutscenes/Cutscene Two" to="Cutscenes/Cutscene Two/Control/DialogBox" method="_on_Cutscene_Two_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/Cutscene Two" to="Player" method="_on_Cutscene_Two_cutscene_started"]
+[connection signal="cutscene_ended" from="Cutscenes/Cutscene Two/Control/DialogBox" to="Cutscenes/Cutscene Two" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/Cutscene Two/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/Cutscene Two/Control/DialogBox" to="Cutscenes/Cutscene Two/Control/DialogBox" method="_on_DialogBox_cutscene_started"]
 [connection signal="damage_taken" from="Player" to="Player/Camera2D/Health UI" method="_on_Player_damage_taken"]
 [connection signal="damage_taken" from="Player/Camera2D/Health UI" to="Player/Camera2D/Health UI" method="_on_Health_UI_damage_taken"]
 

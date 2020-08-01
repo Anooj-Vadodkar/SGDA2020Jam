@@ -12,4 +12,9 @@ func _on_Cutscene_Two_body_entered(body):
 
 
 func _on_DialogBox_cutscene_ended():
+	print("Hello, jojo")
 	queue_free()
+
+
+func _on_CutsceneThree_body_entered(body):
+	print("hi")
