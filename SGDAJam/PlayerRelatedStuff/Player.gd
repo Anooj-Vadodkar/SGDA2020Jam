@@ -3,7 +3,8 @@ extends KinematicBody2D
 enum{
 	NORMAL,
 	CUTSCENE,
-	DIE
+	DIE,
+	FINAL_SCENE
 }
 var health = 4
 const ACCELERATION = 1000
@@ -48,6 +49,10 @@ func _physics_process(delta):
 			velocity = Vector2.ZERO
 		DIE:
 			get_tree().change_scene("res://Scenes/GameOverScene.tscn")
+		FINAL_SCENE:
+			animationPlayer.play("WhenYouStandinRight")
+			velocity.x = 0
+			velocity = velocity.move_toward(MAX_SPEED, ACCELERATION * delta)
 
 func _on_CutsceneOne_cutscene_started():
 	healthUI.set_hearts(4)
@@ -114,5 +119,7 @@ func _on_CutsceneTen_cutscene_started():
 	state = CUTSCENE
 func _on_DialogBox8_cutscene_ended():
 	state = NORMAL
-
-
+func _on_DialogBox9_cutscene_ended():
+	state = FINAL_SCENE
+func _on_CutsceneEleven_cutscene_started():
+	state = CUTSCENE

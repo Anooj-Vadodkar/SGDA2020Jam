@@ -1,6 +1,6 @@
 extends Control
 
-var dialog = ["Alex: Not the alarm anyone, but I'm feeling really nauseous right now.", 
+var dialog = ["Alex: Not to alarm anyone, but I'm feeling really nauseous right now.", 
 "Alvarius: Alex? Since when?", "Daria: Probably around the same time I started feeling it.",
 "Alvarius: Alex, Daria, why were you hiding that? I'm feeling fine, we can turn around if you guys need rest.",
 "Daria: Are you kidding? When we're so close to the end? Not a chance.", "Alex: Besides, if you can carry on we should be fine. You're the one moving around, not either of us.",
@@ -34,6 +34,7 @@ func load_dialog():
 		$Tween.start()
 	else:
 		emit_signal("cutscene_ended")
+		print("goodbye")
 		get_parent().get_parent().collision_layer = 3
 		get_parent().get_parent().collision_mask = 3
 		queue_free()

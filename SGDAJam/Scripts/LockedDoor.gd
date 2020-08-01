@@ -12,14 +12,14 @@ onready var open_sprite = $OpenSprite
 onready var cutscene_nine = get_node("../Cutscenes/CutsceneNine")
 var barrier_has_been_deleted = false
 var cutscene_played = false
-var keys = 0
+var keys = 5
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	if keys == 5:
 		locked_sprite.visible = false
 		open_sprite.visible = true
 		prevention_box.disabled = true
-		cutscene_nine.queue_free()
+		emit_signal("cutscene_ended")
 		keys = keys+1
 
 func _on_CutsceneFour_key_found():
@@ -40,5 +40,4 @@ func _on_CutsceneEight_key_found():
 	keys = keys+1
 
 
-func _on_DialogBox7_cutscene_ended():
-	cutscene_played = true
+

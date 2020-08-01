@@ -9,3 +9,7 @@ func _on_CutsceneNine_body_entered(body):
 
 func _on_DialogBox7_cutscene_ended():
 	queue_free()
+
+
+func _on_LockedDoor_cutscene_ended():
+	queue_free()

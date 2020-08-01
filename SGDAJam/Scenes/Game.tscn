@@ -1,4 +1,4 @@
-[gd_scene load_steps=215 format=2]
+[gd_scene load_steps=218 format=2]
 
 [ext_resource path="res://Scripts/ClickyClicky.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Coffin4Movement.gd" type="Script" id=2]
@@ -63,25 +63,26 @@
 [ext_resource path="res://WorldAssets/Keys/BlueKey.png" type="Texture" id=61]
 [ext_resource path="res://Scripts/CutsceneSix.gd" type="Script" id=62]
 [ext_resource path="res://Scripts/DialogBox4.gd" type="Script" id=63]
-[ext_resource path="res://Scenes/RedKey.gd" type="Script" id=64]
+[ext_resource path="res://Scripts/RedKey.gd" type="Script" id=64]
 [ext_resource path="res://WorldAssets/Keys/RedKey.png" type="Texture" id=65]
-[ext_resource path="res://Scenes/DialogBox5.gd" type="Script" id=66]
-[ext_resource path="res://Scenes/CutsceneSeven.gd" type="Script" id=67]
-[ext_resource path="res://Scenes/CutsceneEight.gd" type="Script" id=68]
+[ext_resource path="res://Scripts/DialogBox5.gd" type="Script" id=66]
+[ext_resource path="res://Scripts/CutsceneSeven.gd" type="Script" id=67]
+[ext_resource path="res://Scripts/CutsceneEight.gd" type="Script" id=68]
 [ext_resource path="res://WorldAssets/Keys/GreenKey.png" type="Texture" id=69]
-[ext_resource path="res://Scenes/DialogBox6.gd" type="Script" id=70]
+[ext_resource path="res://Scripts/DialogBox6.gd" type="Script" id=70]
 [ext_resource path="res://WorldAssets/Physical World Objects/LockedDoorButOpen.png" type="Texture" id=71]
 [ext_resource path="res://Music/Battle.wav" type="AudioStream" id=72]
 [ext_resource path="res://Scenes/BattleTheme.gd" type="Script" id=73]
 [ext_resource path="res://Music/TownTheme.wav" type="AudioStream" id=74]
-[ext_resource path="res://Scenes/Town Theme.gd" type="Script" id=75]
+[ext_resource path="res://Scripts/Town Theme.gd" type="Script" id=75]
 [ext_resource path="res://Music/JRPG2 Piano.wav" type="AudioStream" id=76]
 [ext_resource path="res://WorldAssets/clipart939762.png" type="Texture" id=77]
-[ext_resource path="res://Scenes/CutsceneNine.gd" type="Script" id=78]
-[ext_resource path="res://Scenes/DialogBox7.gd" type="Script" id=79]
-[ext_resource path="res://Scenes/CutsceneTen.gd" type="Script" id=80]
-[ext_resource path="res://Scenes/DialogBox8.gd" type="Script" id=81]
-[ext_resource path="res://Scenes/FinalTheme.gd" type="Script" id=82]
+[ext_resource path="res://Scripts/CutsceneNine.gd" type="Script" id=78]
+[ext_resource path="res://Scripts/DialogBox7.gd" type="Script" id=79]
+[ext_resource path="res://Scripts/CutsceneTen.gd" type="Script" id=80]
+[ext_resource path="res://Scripts/DialogBox8.gd" type="Script" id=81]
+[ext_resource path="res://Scenes/DialogBox9.gd" type="Script" id=83]
+[ext_resource path="res://Scripts/CutsceneEleven.gd" type="Script" id=84]
 
 [sub_resource type="TileSet" id=1]
 0/name = "MoreFunGrassTiles1.png 0"
@@ -759,14 +760,21 @@ radius = 17.9086
 [sub_resource type="RectangleShape2D" id=103]
 extents = Vector2( 10, 26.0546 )
 
-[sub_resource type="CircleShape2D" id=104]
+[sub_resource type="RectangleShape2D" id=104]
+extents = Vector2( 42.6117, 40.546 )
+
+[sub_resource type="CapsuleShape2D" id=105]
+
+[sub_resource type="RectangleShape2D" id=106]
+extents = Vector2( 11.1082, 44.9416 )
+
+[sub_resource type="CircleShape2D" id=107]
 radius = 13.6755
 
-[sub_resource type="DynamicFont" id=105]
+[sub_resource type="DynamicFont" id=108]
 font_data = ExtResource( 23 )
 
-[sub_resource type="Animation" id=106]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=109]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -781,15 +789,14 @@ tracks/0/keys = {
 "values": [ Vector2( 324.898, 233.349 ), Vector2( 324.898, 238.349 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=107]
-radius = 17.7206
+[sub_resource type="CircleShape2D" id=110]
+radius = 28.6952
 
-[sub_resource type="DynamicFont" id=108]
+[sub_resource type="DynamicFont" id=111]
 use_filter = true
 font_data = ExtResource( 23 )
 
-[sub_resource type="Animation" id=109]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=112]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -804,15 +811,14 @@ tracks/0/keys = {
 "values": [ Vector2( 351.498, 201.999 ), Vector2( 351.498, 206.999 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=110]
+[sub_resource type="RectangleShape2D" id=113]
 extents = Vector2( 46.8624, 38.1082 )
 
-[sub_resource type="DynamicFont" id=111]
+[sub_resource type="DynamicFont" id=114]
 use_filter = true
 font_data = ExtResource( 23 )
 
-[sub_resource type="Animation" id=112]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=115]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -827,11 +833,10 @@ tracks/0/keys = {
 "values": [ Vector2( 549.096, 92.75 ), Vector2( 549.096, 97.75 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=113]
+[sub_resource type="CircleShape2D" id=116]
 radius = 19.7421
 
-[sub_resource type="Animation" id=114]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=117]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -846,8 +851,7 @@ tracks/0/keys = {
 "values": [ Vector2( 269.798, 95.0999 ), Vector2( 269.798, 100 ) ]
 }
 
-[sub_resource type="Animation" id=115]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=118]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -862,8 +866,7 @@ tracks/0/keys = {
 "values": [ Vector2( 555.496, 88 ), Vector2( 555.496, 93 ) ]
 }
 
-[sub_resource type="Animation" id=116]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=119]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -878,11 +881,10 @@ tracks/0/keys = {
 "values": [ Vector2( 559.571, 92.4682 ), Vector2( 559.571, 97.468 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=117]
+[sub_resource type="RectangleShape2D" id=120]
 extents = Vector2( 10, 60.1713 )
 
-[sub_resource type="Animation" id=118]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=121]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -897,10 +899,58 @@ tracks/0/keys = {
 "values": [ Vector2( 551.452, 94.5431 ), Vector2( 551.452, 99.543 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=119]
-radius = 53.7297
+[sub_resource type="CircleShape2D" id=122]
+radius = 28.1725
 
-[sub_resource type="Animation" id=120]
+[sub_resource type="Animation" id=123]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 556.363, 85.9489 ), Vector2( 556.363, 90.949 ) ]
+}
+
+[sub_resource type="Animation" id=124]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 556.363, 85.9489 ), Vector2( 556.363, 90.949 ) ]
+}
+
+[sub_resource type="Animation" id=125]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 556.363, 85.9489 ), Vector2( 556.363, 90.949 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=126]
+radius = 51.3911
+
+[sub_resource type="Animation" id=127]
 resource_name = "New Anim"
 loop = true
 tracks/0/type = "value"
@@ -916,48 +966,16 @@ tracks/0/keys = {
 "values": [ Vector2( 556.363, 85.9489 ), Vector2( 556.363, 90.949 ) ]
 }
 
-[sub_resource type="Animation" id=121]
-resource_name = "New Anim"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 556.363, 85.9489 ), Vector2( 556.363, 90.949 ) ]
-}
-
-[sub_resource type="Animation" id=122]
-resource_name = "New Anim"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 556.363, 85.9489 ), Vector2( 556.363, 90.949 ) ]
-}
-
-[sub_resource type="CircleShape2D" id=123]
+[sub_resource type="CircleShape2D" id=128]
 radius = 14.9632
 
-[sub_resource type="CapsuleShape2D" id=124]
+[sub_resource type="CapsuleShape2D" id=129]
 radius = 17.3624
 height = 7.37756
 
-[sub_resource type="Animation" id=125]
+[sub_resource type="Animation" id=130]
 
-[sub_resource type="Animation" id=126]
+[sub_resource type="Animation" id=131]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -983,7 +1001,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=127]
+[sub_resource type="Animation" id=132]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1009,7 +1027,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=128]
+[sub_resource type="Animation" id=133]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -1037,7 +1055,7 @@ tracks/1/keys = {
 "values": [ false, false, false, false, false, false, false, false, false ]
 }
 
-[sub_resource type="Animation" id=129]
+[sub_resource type="Animation" id=134]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -1064,14 +1082,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, true, true, true, true, true, true, true, true ]
 }
-
-[sub_resource type="RectangleShape2D" id=130]
-extents = Vector2( 42.6117, 40.546 )
-
-[sub_resource type="CapsuleShape2D" id=131]
-
-[sub_resource type="RectangleShape2D" id=132]
-extents = Vector2( 11.1082, 44.9416 )
 
 [node name="World" type="Node2D"]
 position = Vector2( -111.142, -16.8006 )
@@ -1381,7 +1391,7 @@ position = Vector2( 41.3668, 4.45654 )
 scale = Vector2( 0.748433, 0.713212 )
 frames = SubResource( 68 )
 animation = "New Anim"
-frame = 5
+frame = 18
 playing = true
 offset = Vector2( 5, 0 )
 
@@ -1472,7 +1482,6 @@ shape = SubResource( 87 )
 position = Vector2( -1039.47, 386.034 )
 scale = Vector2( 1.94234, 1.71492 )
 frames = SubResource( 91 )
-frame = 2
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite"]
@@ -1588,6 +1597,45 @@ shape = SubResource( 102 )
 position = Vector2( -201.536, 209.738 )
 shape = SubResource( 103 )
 
+[node name="LockedDoor" type="KinematicBody2D" parent="."]
+position = Vector2( -1031.85, -27.7815 )
+script = ExtResource( 57 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LockedDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/StaticBody2D"]
+position = Vector2( 6.63416, -18.5756 )
+shape = SubResource( 104 )
+
+[node name="LockedSprite" type="Sprite" parent="LockedDoor"]
+position = Vector2( 15.7977, -26.7487 )
+scale = Vector2( 1.53513, 1.75556 )
+texture = ExtResource( 53 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor"]
+position = Vector2( 476.131, -160.984 )
+shape = SubResource( 105 )
+
+[node name="OpenSprite" type="Sprite" parent="LockedDoor"]
+visible = false
+position = Vector2( 12.7771, -28.0297 )
+scale = Vector2( 1.52351, 1.73483 )
+texture = ExtResource( 71 )
+
+[node name="LeftOpenBoundaries" type="StaticBody2D" parent="LockedDoor"]
+position = Vector2( -6.00012, 1.00002 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/LeftOpenBoundaries"]
+position = Vector2( -23.8467, -29.4575 )
+shape = SubResource( 106 )
+
+[node name="RightOpenBoundaries2" type="StaticBody2D" parent="LockedDoor"]
+position = Vector2( -6.00012, 1.00002 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/RightOpenBoundaries2"]
+position = Vector2( 57.4766, -28.5067 )
+shape = SubResource( 106 )
+
 [node name="Cutscenes" type="YSort" parent="."]
 position = Vector2( 72.1733, 566.283 )
 
@@ -1599,7 +1647,7 @@ script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneOne"]
 position = Vector2( 1.37921, -4.30872 )
-shape = SubResource( 104 )
+shape = SubResource( 107 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneOne"]
 margin_right = 40.0
@@ -1647,7 +1695,7 @@ margin_left = -0.00540161
 margin_top = 0.0104065
 margin_right = -0.00546265
 margin_bottom = 0.0104065
-custom_fonts/normal_font = SubResource( 105 )
+custom_fonts/normal_font = SubResource( 108 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "Alvarius: Where... where am I?"
@@ -1663,19 +1711,19 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneOne/Control/DialogBox1/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 106 )
+"anims/New Anim" = SubResource( 109 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneOne/Control/DialogBox1"]
 
 [node name="CutsceneTwo" type="Area2D" parent="Cutscenes"]
-position = Vector2( -314.753, -213.717 )
+position = Vector2( -313.083, -228.749 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneTwo"]
-position = Vector2( 12.0955, -1.69068 )
-shape = SubResource( 107 )
+position = Vector2( 8.22663, 13.7848 )
+shape = SubResource( 110 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneTwo"]
 margin_left = 1.0
@@ -1720,7 +1768,7 @@ margin_left = 8.81534
 margin_top = -5.40645
 margin_right = -9.14465
 margin_bottom = -16.0464
-custom_fonts/normal_font = SubResource( 108 )
+custom_fonts/normal_font = SubResource( 111 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "I have perhaps bitten off more than I can chew..."
 text = "I have perhaps bitten off more than I can chew..."
@@ -1737,7 +1785,7 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneTwo/Control/DialogBox/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 109 )
+"anims/New Anim" = SubResource( 112 )
 
 [node name="CutsceneThree" type="Area2D" parent="Cutscenes"]
 position = Vector2( -762.369, -220.392 )
@@ -1747,7 +1795,7 @@ script = ExtResource( 49 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneThree"]
 position = Vector2( 6.96399, 6.96393 )
-shape = SubResource( 110 )
+shape = SubResource( 113 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneThree"]
 margin_left = 221.629
@@ -1791,7 +1839,7 @@ margin_left = -9.00134
 margin_top = -0.0640001
 margin_right = -9.07733
 margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -1806,7 +1854,7 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneThree/Control/DialogBox/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 112 )
+"anims/New Anim" = SubResource( 115 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneThree/Control/DialogBox"]
 
@@ -1818,7 +1866,7 @@ script = ExtResource( 50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneFour"]
 position = Vector2( 6.96399, 6.96393 )
-shape = SubResource( 113 )
+shape = SubResource( 116 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneFour"]
 margin_left = 221.629
@@ -1862,7 +1910,7 @@ margin_left = -9.00134
 margin_top = -0.0640001
 margin_right = -9.07733
 margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -1877,7 +1925,7 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneFour/Control/DialogBox2/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 114 )
+"anims/New Anim" = SubResource( 117 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneFour/Control/DialogBox2"]
 
@@ -1894,7 +1942,7 @@ script = ExtResource( 54 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneFive"]
 position = Vector2( 1.92212, 8.22443 )
-shape = SubResource( 113 )
+shape = SubResource( 116 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneFive"]
 margin_left = 221.629
@@ -1938,7 +1986,7 @@ margin_left = -9.00134
 margin_top = -0.0640001
 margin_right = -9.07733
 margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -1953,7 +2001,7 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneFive/Control/DialogBox3/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 115 )
+"anims/New Anim" = SubResource( 118 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneFive/Control/DialogBox3"]
 
@@ -1970,7 +2018,7 @@ script = ExtResource( 62 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneSix"]
 position = Vector2( 3.03015, 8.22443 )
-shape = SubResource( 113 )
+shape = SubResource( 116 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneSix"]
 margin_left = 221.629
@@ -2014,7 +2062,7 @@ margin_left = -9.00134
 margin_top = -0.0640001
 margin_right = -9.07733
 margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -2029,7 +2077,7 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneSix/Control/DialogBox4/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 116 )
+"anims/New Anim" = SubResource( 119 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneSix/Control/DialogBox4"]
 
@@ -2046,7 +2094,7 @@ script = ExtResource( 67 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneSeven"]
 position = Vector2( 3.03015, 8.22443 )
-shape = SubResource( 117 )
+shape = SubResource( 120 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneSeven"]
 margin_left = 221.629
@@ -2090,7 +2138,7 @@ margin_left = -9.00134
 margin_top = -0.0640001
 margin_right = -9.07733
 margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -2105,7 +2153,7 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneSeven/Control/DialogBox5/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 118 )
+"anims/New Anim" = SubResource( 121 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneSeven/Control/DialogBox5"]
 
@@ -2117,7 +2165,7 @@ script = ExtResource( 68 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneEight"]
 position = Vector2( 6.62268, 8.82316 )
-shape = SubResource( 119 )
+shape = SubResource( 122 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneEight"]
 margin_left = 221.629
@@ -2161,7 +2209,7 @@ margin_left = -9.00134
 margin_top = -0.0640001
 margin_right = -9.07733
 margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -2176,7 +2224,7 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneEight/Control/DialogBox6/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 120 )
+"anims/New Anim" = SubResource( 123 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneEight/Control/DialogBox6"]
 
@@ -2192,8 +2240,8 @@ collision_mask = 3
 script = ExtResource( 78 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneNine"]
-position = Vector2( 6.62268, 8.82316 )
-shape = SubResource( 119 )
+position = Vector2( 4.85828, 12.8296 )
+shape = SubResource( 122 )
 
 [node name="Control" type="Control" parent="Cutscenes/CutsceneNine"]
 margin_left = 221.629
@@ -2237,7 +2285,7 @@ margin_left = -9.00134
 margin_top = -0.0640001
 margin_right = -9.07733
 margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -2252,25 +2300,21 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneNine/Control/DialogBox7/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 121 )
+"anims/New Anim" = SubResource( 124 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneNine/Control/DialogBox7"]
 
 [node name="CutsceneTen" type="Area2D" parent="Cutscenes"]
-position = Vector2( -1097.57, -748.239 )
+position = Vector2( -1093.9, -756.498 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 80 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneTen"]
-position = Vector2( 6.62268, 8.82316 )
-shape = SubResource( 119 )
-
 [node name="Control" type="Control" parent="Cutscenes/CutsceneTen"]
-margin_left = 221.629
-margin_top = 289.581
-margin_right = 299.629
-margin_bottom = 416.581
+margin_left = -220.473
+margin_top = 189.582
+margin_right = -142.473
+margin_bottom = 316.582
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2279,10 +2323,10 @@ __meta__ = {
 visible = false
 anchor_left = -1.602
 anchor_right = -1.602
-margin_left = -304.472
-margin_top = -142.758
-margin_right = 304.528
-margin_bottom = -13.7579
+margin_left = 105.32
+margin_top = 6.21408
+margin_right = 714.32
+margin_bottom = 135.214
 script = ExtResource( 81 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2298,17 +2342,20 @@ margin_top = -195.915
 margin_right = 304.584
 margin_bottom = -64.9154
 texture = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutscenes/CutsceneTen/Control/DialogBox8"]
 anchor_left = -0.021
 anchor_top = 0.016
 anchor_right = 0.943
 anchor_bottom = 0.922
-margin_left = -9.00134
-margin_top = -0.0640001
-margin_right = -9.07733
-margin_bottom = 6.062
-custom_fonts/normal_font = SubResource( 111 )
+margin_left = -2.15356
+margin_top = 3.00015
+margin_right = -2.22955
+margin_bottom = 9.12614
+custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_text = "Alvarius: Woah..."
 text = "Alvarius: Woah..."
@@ -2323,9 +2370,87 @@ texture = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneTen/Control/DialogBox8/Sprite"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 122 )
+"anims/New Anim" = SubResource( 125 )
 
 [node name="Tween" type="Tween" parent="Cutscenes/CutsceneTen/Control/DialogBox8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneTen"]
+position = Vector2( 1.1554, 5.28818 )
+shape = SubResource( 126 )
+
+[node name="CutsceneEleven" type="Area2D" parent="Cutscenes"]
+position = Vector2( -1093.9, -1056.46 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 84 )
+
+[node name="Control" type="Control" parent="Cutscenes/CutsceneEleven"]
+margin_left = -220.473
+margin_top = 189.582
+margin_right = -142.473
+margin_bottom = 316.582
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox9" type="Control" parent="Cutscenes/CutsceneEleven/Control"]
+visible = false
+anchor_left = -1.602
+anchor_right = -1.602
+margin_left = 105.32
+margin_top = 6.21408
+margin_right = 714.32
+margin_bottom = 135.214
+script = ExtResource( 83 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Cutscenes/CutsceneEleven/Control/DialogBox9"]
+anchor_left = 0.456
+anchor_top = 1.49
+anchor_right = 0.456
+anchor_bottom = 1.49
+margin_left = -304.416
+margin_top = -195.915
+margin_right = 304.584
+margin_bottom = -64.9154
+texture = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscenes/CutsceneEleven/Control/DialogBox9"]
+anchor_left = -0.021
+anchor_top = 0.016
+anchor_right = 0.943
+anchor_bottom = 0.922
+margin_left = -2.15356
+margin_top = 3.00015
+margin_right = -2.22955
+margin_bottom = 9.12614
+custom_fonts/normal_font = SubResource( 114 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "Alvarius: Woah..."
+text = "Alvarius: Woah..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Cutscenes/CutsceneEleven/Control/DialogBox9"]
+position = Vector2( 556.363, 88.042 )
+scale = Vector2( 0.54388, 0.67058 )
+texture = ExtResource( 33 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/CutsceneEleven/Control/DialogBox9/Sprite"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 127 )
+
+[node name="Tween" type="Tween" parent="Cutscenes/CutsceneEleven/Control/DialogBox9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/CutsceneEleven"]
+position = Vector2( 8.69202, 2.2735 )
+shape = SubResource( 126 )
 
 [node name="RedKey" type="Sprite" parent="."]
 position = Vector2( -2450.72, 823.824 )
@@ -2338,7 +2463,7 @@ script = ExtResource( 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedKey/Area2D"]
 position = Vector2( -201.956, 6.10352e-05 )
-shape = SubResource( 123 )
+shape = SubResource( 128 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 806.88, 330.58 )
@@ -2356,14 +2481,14 @@ frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0.334015, 3.38305 )
-shape = SubResource( 124 )
+shape = SubResource( 129 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-anims/WhenYouDyin = SubResource( 125 )
-anims/WhenYouStandinLeft = SubResource( 126 )
-anims/WhenYouStandinRight = SubResource( 127 )
-anims/WhenYouWalkin = SubResource( 128 )
-anims/WhenYouWalkinLeft = SubResource( 129 )
+anims/WhenYouDyin = SubResource( 130 )
+anims/WhenYouStandinLeft = SubResource( 131 )
+anims/WhenYouStandinRight = SubResource( 132 )
+anims/WhenYouWalkin = SubResource( 133 )
+anims/WhenYouWalkinLeft = SubResource( 134 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -2409,45 +2534,6 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 2212, 972 )
 
-[node name="LockedDoor" type="KinematicBody2D" parent="."]
-position = Vector2( -1031.85, -27.7815 )
-script = ExtResource( 57 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="LockedDoor"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/StaticBody2D"]
-position = Vector2( 6.63416, -18.5756 )
-shape = SubResource( 130 )
-
-[node name="LockedSprite" type="Sprite" parent="LockedDoor"]
-position = Vector2( 15.7977, -26.7487 )
-scale = Vector2( 1.53513, 1.75556 )
-texture = ExtResource( 53 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor"]
-position = Vector2( 476.131, -160.984 )
-shape = SubResource( 131 )
-
-[node name="OpenSprite" type="Sprite" parent="LockedDoor"]
-visible = false
-position = Vector2( 12.7771, -28.0297 )
-scale = Vector2( 1.52351, 1.73483 )
-texture = ExtResource( 71 )
-
-[node name="LeftOpenBoundaries" type="StaticBody2D" parent="LockedDoor"]
-position = Vector2( -6.00012, 1.00002 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/LeftOpenBoundaries"]
-position = Vector2( -23.8467, -29.4575 )
-shape = SubResource( 132 )
-
-[node name="RightOpenBoundaries2" type="StaticBody2D" parent="LockedDoor"]
-position = Vector2( -6.00012, 1.00002 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/RightOpenBoundaries2"]
-position = Vector2( 57.4766, -28.5067 )
-shape = SubResource( 132 )
-
 [node name="Dead Tree" type="Sprite" parent="."]
 position = Vector2( -1034.43, -740.843 )
 scale = Vector2( 0.0723451, 0.0718556 )
@@ -2466,93 +2552,99 @@ script = ExtResource( 73 )
 
 [node name="FinalTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 76 )
-script = ExtResource( 82 )
 [connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="FallableCliffs/cliff/Cliff1" method="_on_Cliff1_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Player" method="_on_Cliff1_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="FallableCliffs/cliff2/Cliff2" method="_on_Cliff2_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Player" method="_on_Cliff2_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="FallableCliffs/cliff3/Cliff3" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="FallableCliffs/cliff3/Cliff3" method="_on_Cliff2_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Player" method="_on_Cliff3_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/Cliff4/Cliff4" to="SecondSkeleton" method="_on_Cliff4_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/Cliff4/Cliff4" to="Player" method="_on_Cliff4_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/Cliff4/Cliff4" to="SecondSkeleton" method="_on_Cliff4_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/Cliff5/Cliff5" to="SecondSkeleton" method="_on_Cliff5_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/Cliff6/Cliff6" to="SecondSkeleton" method="_on_Cliff6_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/Cliff6/Cliff6" to="Player" method="_on_Cliff6_body_entered"]
+[connection signal="body_entered" from="FallableCliffs/Cliff6/Cliff6" to="SecondSkeleton" method="_on_Cliff6_body_entered"]
 [connection signal="cliff_fall" from="Skeleton" to="Skeleton" method="_on_Skeleton_cliff_fall"]
 [connection signal="body_entered" from="Skeleton/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="SecondSkeleton/PlayerInteraction" to="Player" method="_on_PlayerInteraction_body_entered"]
 [connection signal="body_entered" from="SecondSkeleton/PlayerDetectionZone" to="SecondSkeleton/PlayerDetectionZone" method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="SecondSkeleton/PlayerDetectionZone" to="SecondSkeleton/PlayerDetectionZone" method="_on_PlayerDetectionZone_body_exited"]
+[connection signal="cutscene_ended" from="LockedDoor" to="Cutscenes/CutsceneNine" method="_on_LockedDoor_cutscene_ended"]
 [connection signal="area_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_area_entered"]
 [connection signal="body_shape_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_body_shape_entered"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_cutscene_ended"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Player" method="_on_CutsceneOne_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Player" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Skeleton" method="_on_CutsceneOne_cutscene_started"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Cutscenes/CutsceneOne" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Player" method="_on_DialogBox1_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneOne/Control/DialogBox1" to="Skeleton" method="_on_DialogBox1_cutscene_ended"]
 [connection signal="area_entered" from="Cutscenes/CutsceneTwo" to="Cutscenes/CutsceneTwo" method="_on_Cutscene_Two_area_entered"]
 [connection signal="body_entered" from="Cutscenes/CutsceneTwo" to="Cutscenes/CutsceneTwo" method="_on_Cutscene_Two_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneTwo" to="Player" method="_on_Cutscene_Two_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTwo" to="Cutscenes/CutsceneTwo/Control/DialogBox" method="_on_Cutscene_Two_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneTwo" to="Player" method="_on_Cutscene_Two_cutscene_started"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Cutscenes/CutsceneTwo" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTwo/Control/DialogBox" to="Cutscenes/CutsceneTwo/Control/DialogBox" method="_on_DialogBox_cutscene_started"]
 [connection signal="body_entered" from="Cutscenes/CutsceneThree" to="Cutscenes/CutsceneThree" method="_on_CutsceneThree_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneThree" to="Player" method="_on_CutsceneThree_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneThree" to="Cutscenes/CutsceneThree/Control/DialogBox" method="_on_CutsceneThree_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="BattleTheme" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneThree" to="Player" method="_on_CutsceneThree_cutscene_started"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Town Theme" method="_on_DialogBox_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="BattleTheme" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Cutscenes/CutsceneThree" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneThree/Control/DialogBox" to="Player" method="_on_DialogBox_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneFour" to="Cutscenes/CutsceneFour" method="_on_CutsceneFour_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneFour" to="Player" method="_on_CutsceneFour_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneFour" to="Cutscenes/CutsceneFour/Control/DialogBox2" method="_on_CutsceneFour_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneFour" to="Player" method="_on_CutsceneFour_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneFour" to="LockedDoor" method="_on_CutsceneFour_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox2_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Cutscenes/CutsceneFour" method="_on_DialogBox2_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFour/Control/DialogBox2" to="Player" method="_on_DialogBox2_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneFive" to="Cutscenes/CutsceneFive" method="_on_CutsceneFive_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneFive" to="Player" method="_on_CutsceneFive_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneFive" to="Cutscenes/CutsceneFive/Control/DialogBox3" method="_on_CutsceneFive_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneFive" to="Player" method="_on_CutsceneFive_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneFive" to="LockedDoor" method="_on_CutsceneFive_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneFive/Control/DialogBox3" to="Player" method="_on_DialogBox3_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneFive/Control/DialogBox3" to="Cutscenes/CutsceneFive" method="_on_DialogBox3_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneFive/Control/DialogBox3" to="Player" method="_on_DialogBox3_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneSix" to="Cutscenes/CutsceneSix" method="_on_CutsceneSix_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneSix" to="Player" method="_on_CutsceneSix_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneSix" to="Cutscenes/CutsceneSix/Control/DialogBox4" method="_on_CutsceneSix_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneSix" to="Player" method="_on_CutsceneSix_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneSix" to="LockedDoor" method="_on_CutsceneSix_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneSix/Control/DialogBox4" to="Player" method="_on_DialogBox4_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneSix/Control/DialogBox4" to="Cutscenes/CutsceneSix" method="_on_DialogBox4_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneSix/Control/DialogBox4" to="Player" method="_on_DialogBox4_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneSeven" to="Cutscenes/CutsceneSeven" method="_on_CutsceneSeven_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneSeven" to="Player" method="_on_CutsceneSeven_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneSeven" to="Cutscenes/CutsceneSeven/Control/DialogBox5" method="_on_CutsceneSeven_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneSeven/Control/DialogBox5" to="Player" method="_on_DialogBox5_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneSeven" to="Player" method="_on_CutsceneSeven_cutscene_started"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneSeven/Control/DialogBox5" to="Cutscenes/CutsceneSeven" method="_on_DialogBox5_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneSeven/Control/DialogBox5" to="Player" method="_on_DialogBox5_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneEight" to="Cutscenes/CutsceneEight" method="_on_CutsceneEight_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneEight" to="Player" method="_on_CutsceneEight_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneEight" to="Cutscenes/CutsceneEight/Control/DialogBox6" method="_on_CutsceneEight_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneEight" to="Player" method="_on_CutsceneEight_cutscene_started"]
 [connection signal="key_found" from="Cutscenes/CutsceneEight" to="LockedDoor" method="_on_CutsceneEight_key_found"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneEight/Control/DialogBox6" to="Player" method="_on_DialogBox6_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneEight/Control/DialogBox6" to="Cutscenes/CutsceneEight" method="_on_DialogBox6_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneEight/Control/DialogBox6" to="Player" method="_on_DialogBox6_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneNine" to="Cutscenes/CutsceneNine" method="_on_CutsceneNine_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneNine" to="Player" method="_on_CutsceneNine_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneNine" to="Cutscenes/CutsceneNine/Control/DialogBox7" method="_on_CutsceneNine_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneNine" to="Player" method="_on_CutsceneNine_cutscene_started"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="Cutscenes/CutsceneNine" method="_on_DialogBox7_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="Player" method="_on_DialogBox7_cutscene_ended"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="LockedDoor" method="_on_DialogBox7_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneNine/Control/DialogBox7" to="Cutscenes/CutsceneNine" method="_on_DialogBox7_cutscene_ended"]
 [connection signal="body_entered" from="Cutscenes/CutsceneTen" to="Cutscenes/CutsceneTen" method="_on_CutsceneTen_body_entered"]
-[connection signal="cutscene_started" from="Cutscenes/CutsceneTen" to="Player" method="_on_CutsceneTen_cutscene_started"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneTen" to="Cutscenes/CutsceneTen/Control/DialogBox8" method="_on_CutsceneTen_cutscene_started"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="FinalTheme" method="_on_DialogBox8_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Town Theme" method="_on_DialogBox8_cutscene_ended"]
-[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Player" method="_on_DialogBox8_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneTen" to="Player" method="_on_CutsceneTen_cutscene_started"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Cutscenes/CutsceneTen" method="_on_DialogBox8_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="Player" method="_on_DialogBox8_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneTen/Control/DialogBox8" to="LockedDoor" method="_on_DialogBox7_cutscene_ended"]
+[connection signal="body_entered" from="Cutscenes/CutsceneEleven" to="Cutscenes/CutsceneEleven" method="_on_CutsceneTen_body_entered"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneEleven" to="Cutscenes/CutsceneEleven" method="_on_CutsceneEleven_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneEleven" to="Cutscenes/CutsceneEleven/Control/DialogBox9" method="_on_CutsceneEleven_cutscene_started"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneEleven" to="Player" method="_on_CutsceneEleven_cutscene_started"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Cutscenes/CutsceneEleven" method="_on_DialogBox9_cutscene_ended"]
+[connection signal="cutscene_ended" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Player" method="_on_DialogBox9_cutscene_ended"]
+[connection signal="cutscene_started" from="Cutscenes/CutsceneEleven/Control/DialogBox9" to="Cutscenes/CutsceneEleven/Control/DialogBox9" method="_on_DialogBox9_cutscene_started"]
 [connection signal="key_found" from="RedKey" to="LockedDoor" method="_on_RedKey_key_found"]
 [connection signal="body_entered" from="RedKey/Area2D" to="RedKey/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="RedKey/Area2D" to="RedKey" method="_on_Area2D_body_entered"]
