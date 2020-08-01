@@ -1,10 +1,5 @@
 extends Area2D
 
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var timer
 onready var parent = get_parent()
 var mouse_over = false
@@ -14,7 +9,7 @@ var directionChange = false;
 var placePushed = "right"
 var buttonEvent
 var secondaryTimer 
-onready var animatedSprite = $Animations
+onready var animatedSprite = $Animations2
 onready var leftArrow = $LeftArrow
 onready var rightArrow = $RightArrow
 onready var downArrow = $DownArrow
@@ -22,9 +17,9 @@ onready var upArrow = $UpArrow
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-		if(event.pressed and event.button_index == BUTTON_LEFT):
+		if(event.pressed and event.button_index == BUTTON_LEFT and parent.playerDetectionZone.canSeePlayer()):
 			timer = OS.get_unix_time()
-		elif event.pressed and event.button_index == BUTTON_RIGHT:
+		elif event.pressed and event.button_index == BUTTON_RIGHT and parent.playerDetectionZone.canSeePlayer():
 			directionChange = true;
 			secondaryTimer = OS.get_unix_time()
 			displayArrows()

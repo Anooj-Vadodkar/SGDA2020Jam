@@ -5,19 +5,19 @@ enum{
 	CUTSCENE,
 	DIE
 }
-var health = 3
+var health = 4
 const ACCELERATION = 1000
 const MAX_SPEED = 200
 const FRICTION = 1500
 var velocity = Vector2.ZERO
-var facingRight = true
+var facingRight = false
 onready var animationPlayer = $AnimationPlayer
 signal cutscene_started
 signal cutscene_ended
 signal cliff_fall
 signal damage_taken
 var state = CUTSCENE
-
+onready var healthUI = get_node("Camera2D/Health UI")
 func _physics_process(delta):
 	match state:
 		NORMAL:
@@ -41,15 +41,17 @@ func _physics_process(delta):
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			velocity = move_and_slide(velocity)
 		CUTSCENE:
-			if(facingRight):
+			if facingRight:
 				animationPlayer.play("WhenYouStandinRight")
-			animationPlayer.play("WhenYouStandinLeft")
+			else:
+				animationPlayer.play("WhenYouStandinLeft")
 			velocity = Vector2.ZERO
 		DIE:
 			get_tree().change_scene("res://Scenes/GameOverScene.tscn")
 
 func _on_CutsceneOne_cutscene_started():
-	health = 3
+	healthUI.set_hearts(4)
+	health = 4
 	state = CUTSCENE
 func _on_DialogBox1_cutscene_ended():
 	state = NORMAL
@@ -81,4 +83,26 @@ func _on_DialogBox2_cutscene_ended():
 func _on_CutsceneFive_cutscene_started():
 	state = CUTSCENE
 func _on_DialogBox3_cutscene_ended():
+	state = NORMAL
+func _on_PlayerInteraction_body_entered(body):
+	if health > 1:
+		health = health-1
+		emit_signal("damage_taken")
+	else:
+		state = DIE
+func _on_Cliff4_body_entered(body):
+	state = DIE
+func _on_Cliff6_body_entered(body):
+	state = DIE
+func _on_CutsceneSix_cutscene_started():
+	state = CUTSCENE
+func _on_DialogBox4_cutscene_ended():
+	state = NORMAL
+func _on_CutsceneSeven_cutscene_started():
+	state = CUTSCENE
+func _on_DialogBox5_cutscene_ended():
+	state = NORMAL
+func _on_CutsceneEight_cutscene_started():
+	state = CUTSCENE
+func _on_DialogBox6_cutscene_ended():
 	state = NORMAL

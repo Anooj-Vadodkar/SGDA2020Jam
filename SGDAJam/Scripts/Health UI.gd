@@ -2,7 +2,7 @@ extends Control
 
 signal damage_taken
 var hearts = 4
-var max_hearts = 3
+var max_hearts = 4
 
 onready var label = $Label
 onready var heartUIFull = $HeartUIFull

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 
+
 enum{
 	CUTSCENE,
 	IDLE,
@@ -19,7 +20,7 @@ var velocity = Vector2.ZERO
 var state = CHASE
 var isFrozen = false
 onready var playerDetectionZone = $PlayerDetectionZone
-onready var animatedSprite = $Area2D/Animations
+onready var animatedSprite = $PlayerInteraction/Animations2
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	knockback = move_and_slide(knockback)
@@ -51,7 +52,7 @@ func _physics_process(delta):
 					velocity = Vector2.ZERO
 			pass
 		DIE:
-			
+			print("I die...")
 			queue_free()
 			pass
 	velocity = move_and_slide(velocity)
@@ -65,26 +66,17 @@ func seekPlayer():
 #	pass
 
 
-func _on_CutsceneOne_cutscene_started():
-	state = CUTSCENE
 
 
-func _on_DialogBox1_cutscene_ended():
-	state = IDLE
+func _on_Cliff4_body_entered(body):
+	state = DIE
 
 
-func _on_Cliff1_body_entered(body):
-	if body.collision_layer == 3:
-		state = DIE
-
-
-func _on_Cliff2_body_entered(body):
-	if body.collision_layer == 3:
-		state = DIE
+func _on_Cliff5_body_entered(body):
 	
-
-func _on_Cliff3_body_entered(body):
-	if body.collision_layer == 3:
-		state = DIE
+	state = DIE
 
 
+func _on_Cliff6_body_entered(body):
+	
+	state = DIE
