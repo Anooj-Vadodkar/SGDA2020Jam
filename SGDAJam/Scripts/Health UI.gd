@@ -4,7 +4,6 @@ signal damage_taken
 var hearts = 4
 var max_hearts = 4
 
-onready var label = $Label
 onready var heartUIFull = $HeartUIFull
 onready var heartUIEmpty = $HeartUIEmpty
 func set_hearts(value):

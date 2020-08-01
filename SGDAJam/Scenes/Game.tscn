@@ -1455,7 +1455,7 @@ position = Vector2( 41.3668, 4.45654 )
 scale = Vector2( 0.748433, 0.713212 )
 frames = SubResource( 68 )
 animation = "New Anim"
-frame = 10
+frame = 26
 playing = true
 offset = Vector2( 5, 0 )
 
@@ -1546,7 +1546,7 @@ shape = SubResource( 87 )
 position = Vector2( -1039.47, 386.034 )
 scale = Vector2( 1.94234, 1.71492 )
 frames = SubResource( 91 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite"]
@@ -2648,11 +2648,8 @@ anims/NoAnimation = SubResource( 137 )
 [connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="FallableCliffs/cliff/Cliff1" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Player" method="_on_Cliff1_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff/Cliff1" to="Skeleton" method="_on_Cliff1_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="FallableCliffs/cliff2/Cliff2" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Player" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff2/Cliff2" to="Skeleton" method="_on_Cliff2_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="FallableCliffs/cliff3/Cliff3" method="_on_Cliff3_body_entered"]
-[connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="FallableCliffs/cliff3/Cliff3" method="_on_Cliff2_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Player" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/cliff3/Cliff3" to="Skeleton" method="_on_Cliff3_body_entered"]
 [connection signal="body_entered" from="FallableCliffs/Cliff4/Cliff4" to="Player" method="_on_Cliff4_body_entered"]
@@ -2666,7 +2663,6 @@ anims/NoAnimation = SubResource( 137 )
 [connection signal="body_entered" from="SecondSkeleton/PlayerDetectionZone" to="SecondSkeleton/PlayerDetectionZone" method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="SecondSkeleton/PlayerDetectionZone" to="SecondSkeleton/PlayerDetectionZone" method="_on_PlayerDetectionZone_body_exited"]
 [connection signal="cutscene_ended" from="LockedDoor" to="Cutscenes/CutsceneNine" method="_on_LockedDoor_cutscene_ended"]
-[connection signal="area_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_area_entered"]
 [connection signal="body_shape_entered" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_body_shape_entered"]
 [connection signal="cutscene_ended" from="Cutscenes/CutsceneOne" to="Cutscenes/CutsceneOne" method="_on_CutsceneOne_cutscene_ended"]
 [connection signal="cutscene_started" from="Cutscenes/CutsceneOne" to="Player" method="_on_CutsceneOne_cutscene_started"]
