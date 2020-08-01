@@ -47,59 +47,38 @@ func _physics_process(delta):
 			velocity = Vector2.ZERO
 		DIE:
 			get_tree().change_scene("res://Scenes/GameOverScene.tscn")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_CutsceneOne_cutscene_started():
 	health = 3
 	state = CUTSCENE
-	
-
-
 func _on_DialogBox1_cutscene_ended():
 	state = NORMAL
-
-
 func _on_Cutscene_Two_cutscene_started():
 	state = CUTSCENE
-
-
 func _on_DialogBox_cutscene_ended():
 	state = NORMAL
-
-
 func _on_Area2D_body_entered(body):
 	if health > 1:
 		health = health-1
 		emit_signal("damage_taken")
 	else:
 		state = DIE
-	
-
 func _on_Cliff2_body_entered(body):
 	if body.collision_layer == 2:
 		state = DIE
-
-
 func _on_Cliff3_body_entered(body):
 	if body.collision_layer == 2:
 		state = DIE
-
-
 func _on_Cliff1_body_entered(body):
 	if body.collision_layer == 2:
 		state = DIE
-
-
 func _on_CutsceneThree_cutscene_started():
 	state = CUTSCENE
-
-
 func _on_CutsceneFour_cutscene_started():
 	state = CUTSCENE
-
-
 func _on_DialogBox2_cutscene_ended():
+	state = NORMAL
+func _on_CutsceneFive_cutscene_started():
+	state = CUTSCENE
+func _on_DialogBox3_cutscene_ended():
 	state = NORMAL
