@@ -1,12 +1,11 @@
 extends Control
 
-var dialog = ["Daria: Look, another key!", 
-"Alex: Now that you mention it, I haven't felt hungry or thirsty ever since I woke up from that dream inside of our friend's head.",
-"Alvarius: Yall have the luxuries that I do not. In that case, I'm not sharing!", "Alex and Daria: Don't think we asked to share...",
-"Alex: By the way, I hope you picked up the key at your feet. It's the only clue we have in this place.",
-"Alvarius: What key?", "Alex: Wait, what? Where did it go?", "Daria: I saw it too, but it's not in my line of sight whatsoever.",
-"Alvarius: Hey, if you guys all got cool powers, maybe mine is summoning keys at key locations!", "Alex: Can we trade hosts?",
-"Alvarius: It wasn't that bad of a pun..."]
+var dialog = ["Alvarius: Oh Great Fairy, grant us a new, awesome power to smite our foes!", 
+"Alex and Daria: ...", "Alvarius: Can't say I didn't try.", "Daria: Who the hell was daring you to try? Don't you have two awesome powers right here?",
+"Alex: Also, who uses awesome like that anymore?", "Alvarius: Hey, you guys are the ones with the abilities. I've just got two voices in my head questioning my decisions.",
+"Daria: I'm sure it's an improvement from the fifty plus voices from the House questioning them. Isn't that right, Alex?",
+"Alex: Yeah, and that's AFTER the purge.", "Alvarius: I get it, I'm lame, can we move on? I got the key from here.",
+"Daria: Let's."]
 
 var dialog_index = 0
 var finished = false

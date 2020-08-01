@@ -15,3 +15,5 @@ func _on_CutsceneFour_body_entered(body):
 
 func _on_DialogBox2_cutscene_ended():
 	queue_free()
+
+

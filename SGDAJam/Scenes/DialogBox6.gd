@@ -1,12 +1,11 @@
 extends Control
 
-var dialog = ["Daria: Look, another key!", 
-"Alex: Now that you mention it, I haven't felt hungry or thirsty ever since I woke up from that dream inside of our friend's head.",
-"Alvarius: Yall have the luxuries that I do not. In that case, I'm not sharing!", "Alex and Daria: Don't think we asked to share...",
-"Alex: By the way, I hope you picked up the key at your feet. It's the only clue we have in this place.",
-"Alvarius: What key?", "Alex: Wait, what? Where did it go?", "Daria: I saw it too, but it's not in my line of sight whatsoever.",
-"Alvarius: Hey, if you guys all got cool powers, maybe mine is summoning keys at key locations!", "Alex: Can we trade hosts?",
-"Alvarius: It wasn't that bad of a pun..."]
+var dialog = ["Alvarius: Look at that!", "Daria: It's... the same sky we've been looking at this whole time.", 
+"Alex: I don't even think that the clouds have changed since we got here. Have you seen anything different, Daria?",
+"Daria: Not a thing in the sky.", "Alvarius: Even so, I never saw skies like this back at home. It was always industrial, always smoggy.",
+"Alex: Really? We gotta get you out here once we get back to home. Assuming... thats' a thing we can do.", "Alvarius: Wait, do you guys live near each other?",
+"Daria: Yup, we do! Same college. It's pretty great. Sure it's in the middle nowhere, But that just means no light pollution.", 
+"Alex: We'll show you around. Promise!", "Alvarius: I'd like that a lot. I'll be holding you two to that, just wait!"]
 
 var dialog_index = 0
 var finished = false

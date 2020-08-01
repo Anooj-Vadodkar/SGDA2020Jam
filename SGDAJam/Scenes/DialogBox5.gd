@@ -1,12 +1,10 @@
 extends Control
 
-var dialog = ["Daria: Look, another key!", 
-"Alex: Now that you mention it, I haven't felt hungry or thirsty ever since I woke up from that dream inside of our friend's head.",
-"Alvarius: Yall have the luxuries that I do not. In that case, I'm not sharing!", "Alex and Daria: Don't think we asked to share...",
-"Alex: By the way, I hope you picked up the key at your feet. It's the only clue we have in this place.",
-"Alvarius: What key?", "Alex: Wait, what? Where did it go?", "Daria: I saw it too, but it's not in my line of sight whatsoever.",
-"Alvarius: Hey, if you guys all got cool powers, maybe mine is summoning keys at key locations!", "Alex: Can we trade hosts?",
-"Alvarius: It wasn't that bad of a pun..."]
+var dialog = ["Daria: That promise of a skeleton might come sooner rather than later, Alvarius.", "Alvarius: That thing is already swinging wildly! But the key is right there!",
+"Alex: Just so you know, I can push sentient beings too. It takes a little longer, but it is indeed possible, and quite easy.", 
+"Daria: Oh, that's dope. My suggestion was just going to be to freeze it, grab the key, and leave it to question if we were ever really here.",
+"Alvarius: That just feels a little cruel.", "Alex: More or less cruel than my potential suggestion to just shove it off the cliff?",
+"Alvarius: Do you two need to talk about something?", "Alex and Daria: Probably."]
 
 var dialog_index = 0
 var finished = false

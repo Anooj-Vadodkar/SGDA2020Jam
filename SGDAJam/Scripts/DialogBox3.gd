@@ -1,12 +1,13 @@
 extends Control
 
-var dialog = ["Daria: Look, another key!", 
-"Alex: Now that you mention it, I haven't felt hungry or thirsty ever since I woke up from that dream inside of our friend's head.",
-"Alvarius: Yall have the luxuries that I do not. In that case, I'm not sharing!", "Alex and Daria: Don't think we asked to share...",
-"Alex: By the way, I hope you picked up the key at your feet. It's the only clue we have in this place.",
-"Alvarius: What key?", "Alex: Wait, what? Where did it go?", "Daria: I saw it too, but it's not in my line of sight whatsoever.",
-"Alvarius: Hey, if you guys all got cool powers, maybe mine is summoning keys at key locations!", "Alex: Can we trade hosts?",
-"Alvarius: It wasn't that bad of a pun..."]
+var dialog = ["Alex: A graveyard...", 
+"Daria: So there were people here at some point. Either way, looks like they've been out of commission for a while.", 
+"Alex: I wouldn't be so sure about that. Look at the date on this stone over here.", "Alvarius: November 27th... 3013? What?",
+"Daria: That's... weird. Either we all fell into a millenium long coma with no damage to our consciousness, or something took us here somehow.",
+"Alvarius: Why now, though? It can't be just pure chance.", "Daria: Alex, did you happen to hear a voice while you were sleeping?",
+"Alex: Yeah, it mentioned something about a \"promised day\" upon us. After that, they explained what I could do, then I woke up inside Alvarius.",
+"Alvarius: Well, while you two were talking I picked up a key. It disappeared in my hand, so that's probably what happened to the other one too.",
+"Daria: Hah, looks like you didn't get anything after all. You're stuck with time stop and vectors for now.", "Alvarius: I will go back to that skeleton."]
 
 var dialog_index = 0
 var finished = false

@@ -106,3 +106,13 @@ func _on_CutsceneEight_cutscene_started():
 	state = CUTSCENE
 func _on_DialogBox6_cutscene_ended():
 	state = NORMAL
+func _on_CutsceneNine_cutscene_started():
+	state = CUTSCENE
+func _on_DialogBox7_cutscene_ended():
+	state = NORMAL
+func _on_CutsceneTen_cutscene_started():
+	state = CUTSCENE
+func _on_DialogBox8_cutscene_ended():
+	state = NORMAL
+
+
